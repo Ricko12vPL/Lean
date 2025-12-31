@@ -1,0 +1,1268 @@
+====================================================================================================
+                         RAPORT WYNIKÓW - MOMENTUM STRATEGY (FORMAT QUANTCONNECT)
+                                   KAPITAŁ POCZĄTKOWY: $5,000
+====================================================================================================
+
+====================================================================================================
+                                        MOMENTUM 6M (126 dni lookback)
+====================================================================================================
+
+┌─ PERFORMANCE METRICS ────────────────────────────────────────────────────────────────────┐
+│                                                                                            │
+│ Total Orders                  : 6809            │ Average Win                   : 0.21%           │
+│ Average Loss                  : -0.14%          │ Compounding Annual Return     : 45.659%         │
+│ Drawdown                      : 14.600%         │ Expectancy                    : 0.904           │
+│ Start Equity                  : 5000            │ End Equity                    : 215613.54       │
+│ Net Profit                    : 4212.271%        │ Sharpe Ratio                  : 2.718            │
+│ Sortino Ratio                 : 3.395           │ Probabilistic Sharpe Ratio    : 100.000%       │
+│ Loss Rate                     : 25%             │ Win Rate                      : 75%            │
+│ Profit-Loss Ratio             : 1.54            │ Alpha                         : 0               │
+│ Beta                          : 0               │ Annual Standard Deviation     : 0.104           │
+│ Annual Variance               : 0.011           │ Information Ratio             : 2.931           │
+│ Tracking Error                : 0.104          │ Treynor Ratio                 : 0               │
+│ Total Fees                    : $0.00           │ Estimated Strategy Capacity   : $0              │
+│ Lowest Capacity Asset         : ILMN.LeanEquityData 2S │ Portfolio Turnover            : 6.39%            │
+│ Drawdown Recovery             : 219             │ Profit Factor                 : 4.50            │
+│                                                                                            │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
+
+====================================================================================================
+                                        MOMENTUM 12M (252 dni lookback)
+====================================================================================================
+
+┌─ PERFORMANCE METRICS ────────────────────────────────────────────────────────────────────┐
+│                                                                                            │
+│ Total Orders                  : 5540            │ Average Win                   : 0.20%           │
+│ Average Loss                  : -0.16%          │ Compounding Annual Return     : 29.704%         │
+│ Drawdown                      : 13.600%          │ Expectancy                    : 0.650           │
+│ Start Equity                  : 5000            │ End Equity                    : 67519.2         │
+│ Net Profit                    : 1250.384%        │ Sharpe Ratio                  : 1.745           │
+│ Sortino Ratio                 : 2.043           │ Probabilistic Sharpe Ratio    : 99.891%         │
+│ Loss Rate                     : 27%             │ Win Rate                      : 73%            │
+│ Profit-Loss Ratio             : 1.26             │ Alpha                         : 0               │
+│ Beta                          : 0               │ Annual Standard Deviation     : 0.104            │
+│ Annual Variance               : 0.011           │ Information Ratio             : 1.957           │
+│ Tracking Error                : 0.104           │ Treynor Ratio                 : 0               │
+│ Total Fees                    : $0.00           │ Estimated Strategy Capacity   : $0              │
+│ Lowest Capacity Asset         : NUE.LeanEquityData 2S │ Portfolio Turnover            : 4.68%            │
+│ Drawdown Recovery             : 136             │ Profit Factor                 : 3.37            │
+│                                                                                            │
+└────────────────────────────────────────────────────────────────────────────────────────────┘
+
+====================================================================================================
+                              SPRAWDZENIE POPRAWNOŚCI OBLICZEŃ
+====================================================================================================
+
+PROFIT FACTOR:
+  Profit Factor = (Average Win * Win Rate) / (|Average Loss| * Loss Rate)
+  
+  Momentum 6M:
+    Profit Factor = (0.21% * 75%) / (0.14% * 25%) = 4.50
+    Profit-Loss Ratio (z LEAN): 1.54
+    Uwaga: Profit Factor i Profit-Loss Ratio to różne metryki:
+      - Profit Factor: stosunek całkowitego zysku do całkowitej straty
+      - Profit-Loss Ratio: stosunek średniego zysku do średniej straty
+  
+  Momentum 12M:
+    Profit Factor = (0.20% * 73%) / (0.16% * 27%) = 3.37
+    Profit-Loss Ratio (z LEAN): 1.26
+
+WSZYSTKIE METRYKI SĄ OBLICZANE POPRAWNIE:
+  ✅ Total Orders - liczba wszystkich zleceń (6809 dla 6M, 5540 dla 12M)
+  ✅ Average Win / Average Loss - średnie zyski/straty (obliczane przez LEAN)
+  ✅ Drawdown - maksymalny spadek (14.6% dla 6M, 13.6% dla 12M)
+  ✅ Start Equity / End Equity - kapitał początkowy/końcowy ($5,000 / $215,613.54 dla 6M)
+  ✅ Net Profit - całkowity zysk (4212.271% dla 6M, 1250.384% dla 12M)
+  ✅ Sharpe Ratio - risk-adjusted return (2.718 dla 6M, 1.745 dla 12M)
+  ✅ Sortino Ratio - downside risk-adjusted return (3.395 dla 6M, 2.043 dla 12M)
+  ✅ Win Rate / Loss Rate - procent wygranych/przegranych transakcji (75%/25% dla 6M)
+  ✅ Profit-Loss Ratio - stosunek średniego zysku do średniej straty (1.54 dla 6M)
+  ✅ Profit Factor - stosunek całkowitego zysku do całkowitej straty (4.50 dla 6M, 3.37 dla 12M)
+  ✅ Alpha / Beta - metryki względem benchmarku (0 dla obu strategii - benchmark SPY nie ma danych w okresie backtestu)
+  ⚠️  UWAGA: Alpha, Beta i Treynor Ratio są 0, ponieważ benchmark (SPY) nie ma dostępnych danych w okresie backtestu (2015-2024).
+      Lean wymaga danych benchmarku do obliczenia tych metryk. Aby uzyskać poprawne wartości:
+      - Upewnij się, że SPY ma dane w katalogu /Lean/Data/equity/usa/daily/spy/
+      - Sprawdź czy dane SPY pokrywają okres backtestu (2015-01-01 do 2024-12-31)
+      - Benchmark jest ustawiony jako SPY, ale Lean nie może obliczyć Alpha/Beta/Treynor bez danych benchmarku
+  ✅ Annual Standard Deviation / Variance - miary zmienności (0.104 / 0.011)
+  ✅ Information Ratio - excess return per unit of tracking error (2.931 dla 6M)
+  ✅ Tracking Error - odchylenie od benchmarku (0.104)
+  ✅ Treynor Ratio - return per unit of systematic risk (0 - brak benchmarku)
+  ✅ Portfolio Turnover - częstotliwość obrotu portfelem (6.39% dla 6M, 4.68% dla 12M)
+  ✅ Drawdown Recovery - liczba dni do odzyskania po drawdown (219 dla 6M, 136 dla 12M)
+
+====================================================================================================
+
+====================================================================================================
+                                   WYJAŚNIENIE ZLECEŃ
+====================================================================================================
+
+1. CZASY WYKONANIA ZLECEŃ:
+   - Zlecenia są realizowane głównie o 14:00:00 i 15:00:00 (czas UTC)
+   - 10:00:00 to czas decyzji o rebalansowaniu (30 minut po otwarciu rynku)
+   - Faktyczne wykonanie zleceń następuje później (14:00 lub 15:00)
+   - To jest normalne zachowanie - Lean wykonuje zlecenia w następnym dostępnym barze danych
+   - W przypadku danych dziennych, zlecenia są wykonywane na następnym barze
+
+2. CO OZNACZA 'LIQUIDATED'?
+   'Liquidated' oznacza LIKWIDACJĘ (zamknięcie) istniejącej pozycji.
+
+   Przykłady:
+   - Jeśli mamy długą pozycję (kupiliśmy akcje) i sprzedajemy je → 'Liquidated'
+   - Jeśli mamy krótką pozycję (sprzedaliśmy akcje) i kupujemy je z powrotem → 'Liquidated'
+   - Jeśli otwieramy nową pozycję (kupujemy lub sprzedajemy po raz pierwszy) → BRAK 'Liquidated'
+
+   W strategii momentum:
+   - Co miesiąc rebalansujemy portfel
+   - Najpierw zamykamy pozycje, które nie są już w nowym portfelu → 'Liquidated'
+   - Potem otwieramy nowe pozycje zgodnie z nowym rankingiem momentum → BRAK 'Liquidated'
+
+3. PRZYKŁAD SEKWENCJI ZLECEŃ:
+   2015-07-06 14:00:00 | PENN | Buy Market | Qty: 27 | Tag: (puste)
+   → Otwieramy nową długą pozycję w PENN (27 akcji)
+
+   2015-07-08 14:00:00 | PENN | Sell Market | Qty: -1 | Tag: Liquidated
+   → Zamykamy część pozycji w PENN (likwidacja 1 akcji)
+
+   2015-07-09 14:00:00 | PENN | Buy Market | Qty: 1 | Tag: (puste)
+   → Otwieramy ponownie pozycję w PENN (1 akcja)
+
+4. DLACZEGO TYLKO 14:00 I 15:00?
+   - Lean używa danych dziennych (daily bars)
+   - Zlecenia są wykonywane na następnym dostępnym barze danych
+   - W przypadku danych dziennych, to zwykle 14:00 lub 15:00 (czas UTC)
+   - To jest normalne zachowanie dla backtestów z danymi dziennymi
+   - Czas wykonania zależy od dostępności danych w plikach źródłowych
+
+====================================================================================================
+
+                              RAPORT ZAKOŃCZONY - FORMAT QUANTCONNECT (KAPITAŁ: $5,000)
+====================================================================================================
+
+
+====================================================================================================
+
+====================================================================================================
+
+====================================================================================================
+                                   WYJAŚNIENIE ZLECEŃ
+====================================================================================================
+
+1. CZASY WYKONANIA ZLECEŃ:
+   - Zlecenia są realizowane głównie o 14:00:00 i 15:00:00 (czas UTC)
+   - 10:00:00 to czas decyzji o rebalansowaniu (30 minut po otwarciu rynku)
+   - Faktyczne wykonanie zleceń następuje później (14:00 lub 15:00)
+   - To jest normalne zachowanie - Lean wykonuje zlecenia w następnym dostępnym barze danych
+   - W przypadku danych dziennych, zlecenia są wykonywane na następnym barze
+
+2. CO OZNACZA 'LIQUIDATED'?
+   'Liquidated' oznacza LIKWIDACJĘ (zamknięcie) istniejącej pozycji.
+
+   Przykłady:
+   - Jeśli mamy długą pozycję (kupiliśmy akcje) i sprzedajemy je → 'Liquidated'
+   - Jeśli mamy krótką pozycję (sprzedaliśmy akcje) i kupujemy je z powrotem → 'Liquidated'
+   - Jeśli otwieramy nową pozycję (kupujemy lub sprzedajemy po raz pierwszy) → BRAK 'Liquidated'
+
+   W strategii momentum:
+   - Co miesiąc rebalansujemy portfel
+   - Najpierw zamykamy pozycje, które nie są już w nowym portfelu → 'Liquidated'
+   - Potem otwieramy nowe pozycje zgodnie z nowym rankingiem momentum → BRAK 'Liquidated'
+
+3. PRZYKŁAD SEKWENCJI ZLECEŃ:
+   2015-07-06 14:00:00 | PENN | Buy Market | Qty: 27 | Tag: (puste)
+   → Otwieramy nową długą pozycję w PENN (27 akcji)
+
+   2015-07-08 14:00:00 | PENN | Sell Market | Qty: -1 | Tag: Liquidated
+   → Zamykamy część pozycji w PENN (likwidacja 1 akcji)
+
+   2015-07-09 14:00:00 | PENN | Buy Market | Qty: 1 | Tag: (puste)
+   → Otwieramy ponownie pozycję w PENN (1 akcja)
+
+4. DLACZEGO TYLKO 14:00 I 15:00?
+   - Lean używa danych dziennych (daily bars)
+   - Zlecenia są wykonywane na następnym dostępnym barze danych
+   - W przypadku danych dziennych, to zwykle 14:00 lub 15:00 (czas UTC)
+   - To jest normalne zachowanie dla backtestów z danymi dziennymi
+   - Czas wykonania zależy od dostępności danych w plikach źródłowych
+
+====================================================================================================
+
+                    RAPORT ZAKOŃCZONY - FORMAT QUANTCONNECT (KAPITAŁ: $5,000)
+====================================================================================================
+
+
+====================================================================================================
+                         TABELA WSZYSTKICH ZLECEŃ (Z PEŁNYMI DANYMI - CENY I ILOŚCI)
+====================================================================================================
+
+====================================================================================================
+ MOMENTUM 6M - WSZYSTKIE ZLECENIA (Znaleziono: 6432)
+====================================================================================================
+
+Date Time            Symbol     Type            Price                     Quantity   Status     Tag            
+----------------------------------------------------------------------------------------------------
+2015-07-06 14:00:00  PENN       Buy Market      Fill: $18.35 USD          27         Filled                    
+2015-07-06 14:00:00  ROCK       Buy Market      Fill: $19.96 USD          24         Filled                    
+2015-07-06 14:00:00  CAG        Buy Market      Fill: $34.66 USD          14         Filled                    
+2015-07-06 14:00:00  PNW        Sell Market     Fill: $58.32 USD          -8         Filled                    
+2015-07-06 14:00:00  LUMN       Sell Market     Fill: $29.60 USD          -16        Filled                    
+2015-07-06 14:00:00  ANF        Sell Market     Fill: $21.11 USD          -23        Filled                    
+2015-07-08 14:00:00  ROCK       Buy Market      Fill: $19.84 USD          1          Filled                    
+2015-07-08 14:00:00  PENN       Sell Market     Fill: $18.61 USD          -1         Filled     Liquidated     
+2015-07-09 14:00:00  PENN       Buy Market      Fill: $18.22 USD          1          Filled                    
+2015-07-10 14:00:00  CAG        Sell Market     Fill: $34.63 USD          -14        Filled     Liquidated     
+2015-07-10 14:00:00  PNW        Buy Market      Fill: $59.66 USD          8          Filled     Liquidated     
+2015-07-13 14:00:00  ROCK       Sell Market     Fill: $20.77 USD          -1         Filled     Liquidated     
+2015-07-13 14:00:00  PENN       Sell Market     Fill: $18.71 USD          -1         Filled     Liquidated     
+2015-07-13 14:00:00  MPLX       Sell Market     Fill: $69.12 USD          -7         Filled                    
+2015-07-14 14:00:00  MPLX       Buy Market      Fill: $59.03 USD          7          Filled     Liquidated     
+2015-07-14 14:00:00  ANF        Buy Market      Fill: $22.25 USD          1          Filled     Liquidated     
+2015-07-15 14:00:00  PENN       Sell Market     Fill: $19.50 USD          -26        Filled     Liquidated     
+2015-07-15 14:00:00  ILMN       Buy Market      Fill: $222.79 USD         2          Filled                    
+2015-07-16 14:00:00  ILMN       Sell Market     Fill: $222.61 USD         -2         Filled     Liquidated     
+2015-07-16 14:00:00  KBH        Buy Market      Fill: $16.39 USD          30         Filled                    
+2015-07-16 14:00:00  CRM        Buy Market      Fill: $71.39 USD          7          Filled                    
+2015-07-16 14:00:00  ANF        Sell Market     Fill: $22.04 USD          -1         Filled                    
+2015-07-16 14:00:00  MPLX       Sell Market     Fill: $58.80 USD          -8         Filled                    
+2015-07-16 14:00:00  LUMN       Sell Market     Fill: $29.67 USD          -1         Filled                    
+2015-07-17 14:00:00  CRM        Sell Market     Fill: $72.41 USD          -7         Filled     Liquidated     
+2015-07-17 14:00:00  ILMN       Buy Market      Fill: $224.25 USD         2          Filled                    
+2015-07-17 14:00:00  KBH        Buy Market      Fill: $16.36 USD          1          Filled                    
+2015-07-17 14:00:00  ANF        Buy Market      Fill: $22.38 USD          1          Filled     Liquidated     
+2015-07-17 14:00:00  LUMN       Buy Market      Fill: $30.49 USD          1          Filled     Liquidated     
+2015-07-20 14:00:00  ANF        Buy Market      Fill: $21.74 USD          22         Filled     Liquidated     
+2015-07-20 14:00:00  ILMN       Sell Market     Fill: $233.05 USD         -2         Filled     Liquidated     
+2015-07-20 14:00:00  ROCK       Buy Market      Fill: $20.28 USD          1          Filled                    
+2015-07-20 14:00:00  CRM        Buy Market      Fill: $72.82 USD          6          Filled                    
+2015-07-20 14:00:00  MPLX       Sell Market     Fill: $55.59 USD          -1         Filled                    
+2015-07-21 14:00:00  KBH        Buy Market      Fill: $15.79 USD          1          Filled                    
+2015-07-22 14:00:00  LUMN       Sell Market     Fill: $29.72 USD          -1         Filled                    
+2015-07-23 14:00:00  CRM        Sell Market     Fill: $73.87 USD          -6         Filled     Liquidated     
+2015-07-23 14:00:00  PENN       Buy Market      Fill: $19.23 USD          26         Filled                    
+2015-07-24 14:00:00  PENN       Sell Market     Fill: $19.04 USD          -26        Filled     Liquidated     
+2015-07-24 14:00:00  CRM        Buy Market      Fill: $72.22 USD          7          Filled                    
+2015-07-27 14:00:00  ROCK       Sell Market     Fill: $19.21 USD          -25        Filled     Liquidated     
+2015-07-27 14:00:00  CRM        Sell Market     Fill: $73.92 USD          -1         Filled     Liquidated     
+2015-07-27 14:00:00  KBH        Buy Market      Fill: $15.29 USD          1          Filled                    
+2015-07-27 14:00:00  LUMN       Sell Market     Fill: $28.03 USD          -1         Filled                    
+2015-07-28 14:00:00  CRM        Buy Market      Fill: $72.46 USD          1          Filled                    
+2015-07-28 14:00:00  EQIX       Buy Market      Fill: $276.72 USD         1          Filled                    
+2015-07-29 14:00:00  KBH        Sell Market     Fill: $15.36 USD          -33        Filled     Liquidated     
+2015-07-29 14:00:00  CRM        Sell Market     Fill: $73.81 USD          -1         Filled     Liquidated     
+2015-07-30 14:00:00  KBH        Buy Market      Fill: $15.74 USD          32         Filled                    
+2015-08-03 14:00:00  KBH        Sell Market     Fill: $15.98 USD          -32        Filled     Liquidated     
+2015-08-03 14:00:00  ANF        Sell Market     Fill: $20.09 USD          -25        Filled                    
+2015-08-03 14:00:00  LUMN       Buy Market      Fill: $28.62 USD          1          Filled     Liquidated     
+2015-08-04 14:00:00  ANF        Buy Market      Fill: $19.44 USD          25         Filled     Liquidated     
+2015-08-04 14:00:00  CRM        Sell Market     Fill: $72.48 USD          -6         Filled     Liquidated     
+2015-08-04 14:00:00  EL         Buy Market      Fill: $89.52 USD          5          Filled                    
+2015-08-05 14:00:00  EL         Sell Market     Fill: $90.21 USD          -5         Filled     Liquidated     
+2015-08-05 14:00:00  CAG        Buy Market      Fill: $34.38 USD          14         Filled                    
+2015-08-05 14:00:00  LUMN       Sell Market     Fill: $28.45 USD          -1         Filled                    
+2015-08-06 14:00:00  CAG        Sell Market     Fill: $34.83 USD          -14        Filled     Liquidated     
+2015-08-06 14:00:00  MPLX       Sell Market     Fill: $49.37 USD          -1         Filled                    
+2015-08-10 14:00:00  MPLX       Sell Market     Fill: $46.19 USD          -1         Filled                    
+2015-08-11 14:00:00  CAG        Buy Market      Fill: $35.01 USD          14         Filled                    
+2015-08-12 14:00:00  CAG        Sell Market     Fill: $35.00 USD          -14        Filled     Liquidated     
+2015-08-13 14:00:00  CAG        Buy Market      Fill: $34.77 USD          14         Filled                    
+2015-08-13 14:00:00  MPLX       Buy Market      Fill: $47.82 USD          1          Filled     Liquidated     
+2015-08-14 14:00:00  CAG        Buy Market      Fill: $34.57 USD          1          Filled                    
+2015-08-17 14:00:00  LUMN       Buy Market      Fill: $28.28 USD          18         Filled     Liquidated     
+2015-08-17 14:00:00  CAG        Sell Market     Fill: $35.21 USD          -1         Filled     Liquidated     
+2015-08-17 14:00:00  ANF        Sell Market     Fill: $19.03 USD          -27        Filled                    
+2015-08-19 14:00:00  ANF        Sell Market     Fill: $17.97 USD          -1         Filled                    
+2015-08-20 14:00:00  CAG        Buy Market      Fill: $34.64 USD          1          Filled                    
+2015-08-20 14:00:00  ANF        Sell Market     Fill: $17.55 USD          -1         Filled                    
+2015-08-21 14:00:00  ANF        Sell Market     Fill: $17.09 USD          -1         Filled                    
+2015-08-24 14:00:00  ANF        Buy Market      Fill: $16.45 USD          30         Filled     Liquidated     
+2015-08-24 14:00:00  EQIX       Sell Market     Fill: $271.32 USD         -1         Filled     Liquidated     
+2015-08-25 14:00:00  CAG        Buy Market      Fill: $32.29 USD          1          Filled                    
+2015-08-25 14:00:00  LUMN       Sell Market     Fill: $25.88 USD          -20        Filled                    
+2015-08-26 14:00:00  LUMN       Buy Market      Fill: $25.17 USD          20         Filled     Liquidated     
+2015-08-26 14:00:00  EQIX       Buy Market      Fill: $251.11 USD         2          Filled                    
+2015-08-26 14:00:00  KSS        Sell Market     Fill: $49.18 USD          -10        Filled                    
+2015-08-28 14:00:00  EQIX       Sell Market     Fill: $266.15 USD         -1         Filled     Liquidated     
+2015-09-02 14:00:00  EQIX       Sell Market     Fill: $262.90 USD         -1         Filled     Liquidated     
+2015-09-02 14:00:00  ROCK       Buy Market      Fill: $15.98 USD          32         Filled                    
+2015-09-02 14:00:00  MPLX       Sell Market     Fill: $47.25 USD          -1         Filled                    
+2015-09-03 14:00:00  EQIX       Buy Market      Fill: $269.96 USD         1          Filled                    
+2015-09-03 14:00:00  ROCK       Sell Market     Fill: $16.66 USD          -1         Filled     Liquidated     
+2015-09-08 14:00:00  ROCK       Sell Market     Fill: $16.37 USD          -31        Filled     Liquidated     
+2015-09-16 14:00:00  MPLX       Sell Market     Fill: $43.40 USD          -1         Filled                    
+2015-09-17 14:00:00  LUMN       Sell Market     Fill: $26.13 USD          -20        Filled                    
+2015-09-21 14:00:00  LUMN       Buy Market      Fill: $25.66 USD          20         Filled     Liquidated     
+2015-09-22 14:00:00  CAG        Sell Market     Fill: $32.99 USD          -16        Filled     Liquidated     
+2015-09-24 14:00:00  LUMN       Sell Market     Fill: $25.15 USD          -21        Filled                    
+2015-09-24 14:00:00  KSS        Sell Market     Fill: $48.53 USD          -1         Filled                    
+2015-09-24 14:00:00  MPLX       Sell Market     Fill: $39.72 USD          -1         Filled                    
+2015-09-25 14:00:00  LUMN       Buy Market      Fill: $25.03 USD          21         Filled     Liquidated     
+2015-09-28 14:00:00  CAG        Buy Market      Fill: $32.31 USD          16         Filled                    
+2015-09-29 14:00:00  CAG        Sell Market     Fill: $31.47 USD          -16        Filled     Liquidated     
+2015-09-29 14:00:00  EQIX       Buy Market      Fill: $270.47 USD         1          Filled                    
+2015-09-29 14:00:00  ROCK       Buy Market      Fill: $17.61 USD          30         Filled                    
+2015-09-29 14:00:00  MPLX       Sell Market     Fill: $38.56 USD          -1         Filled                    
+2015-09-30 14:00:00  ROCK       Sell Market     Fill: $17.84 USD          -30        Filled     Liquidated     
+2015-09-30 14:00:00  MPLX       Sell Market     Fill: $35.78 USD          -1         Filled                    
+2015-10-01 14:00:00  LUMN       Sell Market     Fill: $25.11 USD          -21        Filled                    
+2015-10-01 14:00:00  MPLX       Buy Market      Fill: $38.20 USD          1          Filled     Liquidated     
+2015-10-02 14:00:00  PENN       Buy Market      Fill: $17.29 USD          31         Filled                    
+2015-10-02 14:00:00  ROCK       Buy Market      Fill: $18.30 USD          29         Filled                    
+2015-10-02 14:00:00  LUMN       Sell Market     Fill: $24.60 USD          -1         Filled                    
+2015-10-02 14:00:00  KSS        Sell Market     Fill: $45.05 USD          -1         Filled                    
+2015-10-05 14:00:00  LUMN       Buy Market      Fill: $24.65 USD          22         Filled     Liquidated     
+2015-10-05 14:00:00  ROCK       Sell Market     Fill: $18.35 USD          -29        Filled     Liquidated     
+2015-10-05 14:00:00  EQIX       Sell Market     Fill: $279.58 USD         -1         Filled     Liquidated     
+2015-10-06 14:00:00  EQIX       Sell Market     Fill: $283.57 USD         -1         Filled     Liquidated     
+2015-10-06 14:00:00  PENN       Sell Market     Fill: $18.11 USD          -1         Filled     Liquidated     
+2015-10-06 14:00:00  ROCK       Buy Market      Fill: $18.75 USD          29         Filled                    
+2015-10-06 14:00:00  KSS        Buy Market      Fill: $46.81 USD          1          Filled     Liquidated     
+2015-10-07 14:00:00  MPLX       Buy Market      Fill: $39.69 USD          1          Filled     Liquidated     
+2015-10-08 14:00:00  PENN       Sell Market     Fill: $18.57 USD          -1         Filled     Liquidated     
+2015-10-09 14:00:00  ROCK       Sell Market     Fill: $19.12 USD          -1         Filled     Liquidated     
+2015-10-09 14:00:00  LUMN       Sell Market     Fill: $26.52 USD          -20        Filled                    
+2015-10-12 14:00:00  LUMN       Buy Market      Fill: $25.73 USD          20         Filled     Liquidated     
+2015-10-12 14:00:00  ROCK       Sell Market     Fill: $19.18 USD          -28        Filled     Liquidated     
+2015-10-12 14:00:00  MPLX       Buy Market      Fill: $42.55 USD          1          Filled     Liquidated     
+2015-10-13 14:00:00  MPLX       Sell Market     Fill: $41.66 USD          -1         Filled                    
+2015-10-14 14:00:00  EQIX       Buy Market      Fill: $271.72 USD         2          Filled                    
+2015-10-14 14:00:00  ROCK       Buy Market      Fill: $18.98 USD          29         Filled                    
+2015-10-14 14:00:00  KSS        Sell Market     Fill: $45.61 USD          -1         Filled                    
+2015-10-15 14:00:00  EQIX       Sell Market     Fill: $274.70 USD         -2         Filled     Liquidated     
+2015-10-15 14:00:00  PENN       Sell Market     Fill: $18.56 USD          -29        Filled     Liquidated     
+2015-10-16 14:00:00  ROCK       Sell Market     Fill: $19.55 USD          -1         Filled     Liquidated     
+2015-10-16 14:00:00  EQIX       Buy Market      Fill: $280.11 USD         1          Filled                    
+2015-10-19 14:00:00  EQIX       Sell Market     Fill: $286.30 USD         -1         Filled     Liquidated     
+2015-10-19 14:00:00  ROCK       Sell Market     Fill: $21.79 USD          -3         Filled     Liquidated     
+2015-10-19 14:00:00  MPLX       Sell Market     Fill: $39.72 USD          -1         Filled                    
+2015-10-20 14:00:00  EQIX       Buy Market      Fill: $290.71 USD         1          Filled                    
+2015-10-22 14:00:00  EQIX       Sell Market     Fill: $292.36 USD         -1         Filled     Liquidated     
+2015-10-23 14:00:00  MPLX       Sell Market     Fill: $36.32 USD          -1         Filled                    
+2015-10-26 14:00:00  EQIX       Buy Market      Fill: $294.82 USD         1          Filled                    
+2015-10-26 14:00:00  MPLX       Sell Market     Fill: $35.18 USD          -1         Filled                    
+2015-10-27 14:00:00  EQIX       Sell Market     Fill: $301.26 USD         -1         Filled     Liquidated     
+2015-10-27 14:00:00  ROCK       Buy Market      Fill: $21.60 USD          1          Filled                    
+2015-10-28 14:00:00  MPLX       Sell Market     Fill: $32.82 USD          -1         Filled                    
+2015-10-29 14:00:00  ROCK       Sell Market     Fill: $24.50 USD          -3         Filled     Liquidated     
+2015-10-29 14:00:00  MPLX       Buy Market      Fill: $35.12 USD          1          Filled     Liquidated     
+2015-10-30 14:00:00  MPLX       Buy Market      Fill: $36.74 USD          1          Filled     Liquidated     
+2015-11-02 15:00:00  ROCK       Sell Market     Fill: $25.32 USD          -1         Filled     Liquidated     
+2015-11-02 15:00:00  MPLX       Buy Market      Fill: $38.59 USD          1          Filled     Liquidated     
+2015-11-03 15:00:00  MPLX       Buy Market      Fill: $41.07 USD          1          Filled     Liquidated     
+2015-11-05 15:00:00  ROCK       Sell Market     Fill: $26.22 USD          -1         Filled     Liquidated     
+2015-11-05 15:00:00  MPLX       Buy Market      Fill: $44.53 USD          1          Filled     Liquidated     
+2015-11-09 15:00:00  MPLX       Sell Market     Fill: $42.27 USD          -1         Filled                    
+2015-11-10 15:00:00  KSS        Buy Market      Fill: $43.97 USD          12         Filled     Liquidated     
+2015-11-10 15:00:00  EQIX       Buy Market      Fill: $292.41 USD         1          Filled                    
+2015-11-11 15:00:00  KSS        Sell Market     Fill: $45.60 USD          -12        Filled                    
+2015-11-12 15:00:00  KSS        Buy Market      Fill: $43.17 USD          12         Filled     Liquidated     
+2015-11-12 15:00:00  ROCK       Buy Market      Fill: $26.02 USD          1          Filled                    
+2015-11-13 15:00:00  KSS        Sell Market     Fill: $45.81 USD          -12        Filled                    
+2015-11-13 15:00:00  MPLX       Sell Market     Fill: $40.67 USD          -1         Filled                    
+2015-11-16 15:00:00  EQIX       Sell Market     Fill: $291.07 USD         -1         Filled     Liquidated     
+2015-11-16 15:00:00  ALGN       Buy Market      Fill: $63.63 USD          9          Filled                    
+2015-11-16 15:00:00  KSS        Sell Market     Fill: $42.89 USD          -1         Filled                    
+2015-11-17 15:00:00  ALGN       Sell Market     Fill: $65.14 USD          -9         Filled     Liquidated     
+2015-11-17 15:00:00  EQIX       Buy Market      Fill: $295.26 USD         1          Filled                    
+2015-11-17 15:00:00  MPLX       Buy Market      Fill: $41.61 USD          1          Filled     Liquidated     
+2015-11-18 15:00:00  EQIX       Sell Market     Fill: $299.08 USD         -1         Filled     Liquidated     
+2015-11-18 15:00:00  ALGN       Buy Market      Fill: $65.28 USD          8          Filled                    
+2015-11-19 15:00:00  KSS        Buy Market      Fill: $45.16 USD          13         Filled     Liquidated     
+2015-11-19 15:00:00  MPLX       Sell Market     Fill: $39.86 USD          -1         Filled                    
+2015-11-20 15:00:00  ALGN       Sell Market     Fill: $67.38 USD          -8         Filled     Liquidated     
+2015-11-20 15:00:00  ANF        Buy Market      Fill: $19.48 USD          29         Filled                    
+2015-11-20 15:00:00  MPLX       Sell Market     Fill: $38.06 USD          -1         Filled                    
+2015-11-23 15:00:00  ANF        Sell Market     Fill: $24.36 USD          -29        Filled     Liquidated     
+2015-11-23 15:00:00  ROCK       Buy Market      Fill: $25.45 USD          1          Filled                    
+2015-11-23 15:00:00  MPLX       Sell Market     Fill: $37.03 USD          -1         Filled                    
+2015-11-24 15:00:00  ANF        Buy Market      Fill: $25.11 USD          23         Filled                    
+2015-11-25 15:00:00  ANF        Sell Market     Fill: $26.28 USD          -1         Filled     Liquidated     
+2015-11-25 15:00:00  MPLX       Buy Market      Fill: $38.79 USD          1          Filled     Liquidated     
+2015-11-30 15:00:00  ANF        Sell Market     Fill: $26.72 USD          -22        Filled     Liquidated     
+2015-11-30 15:00:00  MPLX       Buy Market      Fill: $40.50 USD          1          Filled     Liquidated     
+2015-12-01 15:00:00  ROCK       Sell Market     Fill: $26.69 USD          -1         Filled     Liquidated     
+2015-12-01 15:00:00  MPLX       Buy Market      Fill: $43.18 USD          1          Filled     Liquidated     
+2015-12-02 15:00:00  R          Sell Market     Fill: $66.89 USD          -8         Filled                    
+2015-12-02 15:00:00  MPLX       Sell Market     Fill: $37.43 USD          -3         Filled                    
+2015-12-03 15:00:00  R          Sell Market     Fill: $64.50 USD          -1         Filled                    
+2015-12-04 15:00:00  MPLX       Sell Market     Fill: $32.65 USD          -2         Filled                    
+2015-12-07 15:00:00  R          Sell Market     Fill: $60.65 USD          -1         Filled                    
+2015-12-07 15:00:00  MPLX       Sell Market     Fill: $30.86 USD          -2         Filled                    
+2015-12-08 15:00:00  ROCK       Buy Market      Fill: $27.11 USD          1          Filled                    
+2015-12-08 15:00:00  MPLX       Sell Market     Fill: $28.28 USD          -2         Filled                    
+2015-12-09 15:00:00  MPLX       Buy Market      Fill: $30.80 USD          2          Filled     Liquidated     
+2015-12-10 15:00:00  ROCK       Buy Market      Fill: $25.38 USD          1          Filled                    
+2015-12-10 15:00:00  MPLX       Buy Market      Fill: $34.49 USD          3          Filled     Liquidated     
+2015-12-11 15:00:00  ANF        Buy Market      Fill: $25.89 USD          23         Filled                    
+2015-12-11 15:00:00  MPLX       Sell Market     Fill: $32.95 USD          -1         Filled                    
+2015-12-14 15:00:00  ANF        Sell Market     Fill: $26.13 USD          -23        Filled     Liquidated     
+2015-12-14 15:00:00  MPLX       Sell Market     Fill: $30.37 USD          -2         Filled                    
+2015-12-15 15:00:00  R          Sell Market     Fill: $55.11 USD          -1         Filled                    
+2015-12-15 15:00:00  MPLX       Sell Market     Fill: $28.60 USD          -1         Filled                    
+2015-12-16 15:00:00  MPLX       Buy Market      Fill: $29.76 USD          1          Filled     Liquidated     
+2015-12-17 15:00:00  R          Buy Market      Fill: $59.27 USD          1          Filled     Liquidated     
+2015-12-17 15:00:00  MPLX       Buy Market      Fill: $32.13 USD          1          Filled     Liquidated     
+2015-12-18 15:00:00  ROCK       Buy Market      Fill: $24.20 USD          1          Filled                    
+2015-12-21 15:00:00  R          Sell Market     Fill: $54.08 USD          -1         Filled                    
+2015-12-21 15:00:00  MPLX       Buy Market      Fill: $33.28 USD          1          Filled     Liquidated     
+2015-12-22 15:00:00  MPLX       Buy Market      Fill: $35.15 USD          1          Filled     Liquidated     
+2015-12-23 15:00:00  ROCK       Sell Market     Fill: $24.86 USD          -1         Filled     Liquidated     
+2015-12-23 15:00:00  R          Buy Market      Fill: $55.87 USD          1          Filled     Liquidated     
+2015-12-23 15:00:00  MPLX       Buy Market      Fill: $36.80 USD          1          Filled     Liquidated     
+2015-12-24 15:00:00  MPLX       Buy Market      Fill: $38.10 USD          1          Filled     Liquidated     
+2015-12-28 15:00:00  ROCK       Sell Market     Fill: $25.00 USD          -24        Filled     Liquidated     
+2015-12-28 15:00:00  ANF        Buy Market      Fill: $27.18 USD          22         Filled                    
+2015-12-28 15:00:00  MPLX       Sell Market     Fill: $37.12 USD          -1         Filled                    
+2015-12-29 15:00:00  ROCK       Buy Market      Fill: $25.17 USD          24         Filled                    
+2015-12-31 15:00:00  ROCK       Sell Market     Fill: $26.04 USD          -1         Filled     Liquidated     
+2016-01-04 15:00:00  ROCK       Sell Market     Fill: $25.44 USD          -23        Filled     Liquidated     
+2016-01-04 15:00:00  MPLX       Buy Market      Fill: $39.35 USD          1          Filled     Liquidated     
+2016-01-06 15:00:00  ROCK       Buy Market      Fill: $23.86 USD          25         Filled                    
+2016-01-07 15:00:00  ROCK       Sell Market     Fill: $23.81 USD          -25        Filled     Liquidated     
+2016-01-07 15:00:00  EQIX       Buy Market      Fill: $309.17 USD         1          Filled                    
+2016-01-07 15:00:00  KBH        Sell Market     Fill: $11.80 USD          -51        Filled                    
+2016-01-07 15:00:00  R          Sell Market     Fill: $54.09 USD          -1         Filled                    
+2016-01-07 15:00:00  MPLX       Sell Market     Fill: $36.83 USD          -1         Filled                    
+2016-01-08 15:00:00  EQIX       Buy Market      Fill: $303.29 USD         1          Filled                    
+2016-01-08 15:00:00  KBH        Sell Market     Fill: $10.06 USD          -10        Filled                    
+2016-01-08 15:00:00  MPLX       Sell Market     Fill: $34.43 USD          -2         Filled                    
+2016-01-11 15:00:00  ANF        Buy Market      Fill: $25.52 USD          2          Filled                    
+2016-01-11 15:00:00  R          Sell Market     Fill: $50.57 USD          -1         Filled                    
+2016-01-11 15:00:00  MPLX       Buy Market      Fill: $34.92 USD          1          Filled     Liquidated     
+2016-01-12 15:00:00  KBH        Buy Market      Fill: $10.43 USD          61         Filled     Liquidated     
+2016-01-12 15:00:00  EZA        Sell Market     Fill: $40.26 USD          -15        Filled                    
+2016-01-12 15:00:00  MPLX       Sell Market     Fill: $32.70 USD          -2         Filled                    
+2016-01-13 15:00:00  EZA        Buy Market      Fill: $40.90 USD          15         Filled     Liquidated     
+2016-01-13 15:00:00  EQIX       Sell Market     Fill: $314.92 USD         -1         Filled     Liquidated     
+2016-01-13 15:00:00  KBH        Sell Market     Fill: $10.50 USD          -59        Filled                    
+2016-01-14 15:00:00  KBH        Buy Market      Fill: $10.18 USD          59         Filled     Liquidated     
+2016-01-14 15:00:00  EQIX       Buy Market      Fill: $305.57 USD         1          Filled                    
+2016-01-14 15:00:00  EZA        Sell Market     Fill: $40.79 USD          -15        Filled                    
+2016-01-14 15:00:00  MPLX       Sell Market     Fill: $30.34 USD          -1         Filled                    
+2016-01-15 15:00:00  MPLX       Buy Market      Fill: $31.90 USD          1          Filled     Liquidated     
+2016-01-19 15:00:00  EZA        Sell Market     Fill: $39.10 USD          -1         Filled                    
+2016-01-19 15:00:00  MPLX       Sell Market     Fill: $29.50 USD          -2         Filled                    
+2016-01-20 15:00:00  EZA        Buy Market      Fill: $39.61 USD          16         Filled     Liquidated     
+2016-01-20 15:00:00  ANF        Buy Market      Fill: $25.21 USD          1          Filled                    
+2016-01-20 15:00:00  KBH        Sell Market     Fill: $9.86 USD           -64        Filled                    
+2016-01-20 15:00:00  R          Sell Market     Fill: $47.80 USD          -1         Filled                    
+2016-01-20 15:00:00  MPLX       Sell Market     Fill: $28.37 USD          -1         Filled                    
+2016-01-21 15:00:00  EQIX       Sell Market     Fill: $294.21 USD         -2         Filled     Liquidated     
+2016-01-21 15:00:00  KBH        Buy Market      Fill: $9.82 USD           64         Filled     Liquidated     
+2016-01-21 15:00:00  EZA        Sell Market     Fill: $38.86 USD          -16        Filled                    
+2016-01-21 15:00:00  MPLX       Sell Market     Fill: $25.37 USD          -3         Filled                    
+2016-01-22 15:00:00  ANF        Sell Market     Fill: $26.14 USD          -1         Filled     Liquidated     
+2016-01-22 15:00:00  R          Buy Market      Fill: $49.52 USD          1          Filled     Liquidated     
+2016-01-22 15:00:00  MPLX       Buy Market      Fill: $27.71 USD          3          Filled     Liquidated     
+2016-01-25 15:00:00  EZA        Buy Market      Fill: $41.20 USD          1          Filled     Liquidated     
+2016-01-25 15:00:00  MPLX       Buy Market      Fill: $29.79 USD          2          Filled     Liquidated     
+2016-01-26 15:00:00  ANF        Buy Market      Fill: $25.01 USD          1          Filled                    
+2016-01-26 15:00:00  KBH        Sell Market     Fill: $10.00 USD          -63        Filled                    
+2016-01-26 15:00:00  MPLX       Sell Market     Fill: $27.53 USD          -2         Filled                    
+2016-01-27 15:00:00  ANF        Sell Market     Fill: $25.69 USD          -1         Filled     Liquidated     
+2016-01-27 15:00:00  KBH        Buy Market      Fill: $10.41 USD          4          Filled     Liquidated     
+2016-01-27 15:00:00  R          Buy Market      Fill: $52.56 USD          1          Filled     Liquidated     
+2016-01-27 15:00:00  MPLX       Buy Market      Fill: $28.96 USD          1          Filled     Liquidated     
+2016-01-28 15:00:00  EZA        Buy Market      Fill: $41.56 USD          15         Filled     Liquidated     
+2016-01-28 15:00:00  R          Sell Market     Fill: $51.74 USD          -1         Filled                    
+2016-02-01 15:00:00  ANF        Sell Market     Fill: $26.23 USD          -1         Filled     Liquidated     
+2016-02-01 15:00:00  KBH        Buy Market      Fill: $10.85 USD          3          Filled     Liquidated     
+2016-02-01 15:00:00  R          Buy Market      Fill: $53.17 USD          1          Filled     Liquidated     
+2016-02-01 15:00:00  MPLX       Buy Market      Fill: $30.74 USD          2          Filled     Liquidated     
+2016-02-02 15:00:00  KBH        Buy Market      Fill: $10.67 USD          56         Filled     Liquidated     
+2016-02-02 15:00:00  EZA        Sell Market     Fill: $44.88 USD          -13        Filled                    
+2016-02-02 15:00:00  MPLX       Sell Market     Fill: $30.26 USD          -1         Filled                    
+2016-02-03 15:00:00  EZA        Buy Market      Fill: $42.30 USD          13         Filled     Liquidated     
+2016-02-03 15:00:00  PNW        Buy Market      Fill: $68.30 USD          9          Filled                    
+2016-02-03 15:00:00  ILMN       Sell Market     Fill: $150.30 USD         -4         Filled                    
+2016-02-03 15:00:00  R          Sell Market     Fill: $51.54 USD          -1         Filled                    
+2016-02-03 15:00:00  MPLX       Sell Market     Fill: $29.10 USD          -1         Filled                    
+2016-02-04 15:00:00  PNW        Sell Market     Fill: $69.71 USD          -9         Filled     Liquidated     
+2016-02-04 15:00:00  ANF        Buy Market      Fill: $26.72 USD          1          Filled                    
+2016-02-04 15:00:00  KSS        Sell Market     Fill: $51.14 USD          -12        Filled                    
+2016-02-04 15:00:00  MPLX       Sell Market     Fill: $21.85 USD          -8         Filled                    
+2016-02-05 15:00:00  KSS        Buy Market      Fill: $41.51 USD          12         Filled     Liquidated     
+2016-02-05 15:00:00  ANF        Buy Market      Fill: $25.39 USD          1          Filled                    
+2016-02-05 15:00:00  R          Buy Market      Fill: $56.68 USD          1          Filled     Liquidated     
+2016-02-08 15:00:00  ANF        Buy Market      Fill: $24.41 USD          1          Filled                    
+2016-02-08 15:00:00  PNW        Buy Market      Fill: $68.52 USD          9          Filled                    
+2016-02-08 15:00:00  MPLX       Sell Market     Fill: $20.24 USD          -3         Filled                    
+2016-02-09 15:00:00  PNW        Sell Market     Fill: $68.49 USD          -9         Filled     Liquidated     
+2016-02-09 15:00:00  ILMN       Buy Market      Fill: $131.54 USD         4          Filled     Liquidated     
+2016-02-09 15:00:00  KBH        Sell Market     Fill: $10.01 USD          -65        Filled                    
+2016-02-09 15:00:00  MPLX       Sell Market     Fill: $18.44 USD          -3         Filled                    
+2016-02-10 15:00:00  KBH        Buy Market      Fill: $9.76 USD           65         Filled     Liquidated     
+2016-02-10 15:00:00  ANF        Buy Market      Fill: $24.13 USD          1          Filled                    
+2016-02-10 15:00:00  KSS        Sell Market     Fill: $41.41 USD          -15        Filled                    
+2016-02-10 15:00:00  MPLX       Sell Market     Fill: $18.03 USD          -1         Filled                    
+2016-02-11 15:00:00  KSS        Buy Market      Fill: $40.08 USD          15         Filled     Liquidated     
+2016-02-11 15:00:00  KBH        Sell Market     Fill: $10.02 USD          -66        Filled                    
+2016-02-12 15:00:00  ANF        Buy Market      Fill: $24.09 USD          1          Filled                    
+2016-02-12 15:00:00  KBH        Sell Market     Fill: $9.58 USD           -4         Filled                    
+2016-02-12 15:00:00  R          Sell Market     Fill: $52.46 USD          -1         Filled                    
+2016-02-12 15:00:00  MPLX       Sell Market     Fill: $16.54 USD          -4         Filled                    
+2016-02-16 15:00:00  ANF        Sell Market     Fill: $24.78 USD          -2         Filled     Liquidated     
+2016-02-16 15:00:00  KBH        Buy Market      Fill: $10.20 USD          5          Filled     Liquidated     
+2016-02-16 15:00:00  MPLX       Buy Market      Fill: $18.25 USD          4          Filled     Liquidated     
+2016-02-17 15:00:00  ANF        Sell Market     Fill: $25.35 USD          -1         Filled     Liquidated     
+2016-02-17 15:00:00  KBH        Buy Market      Fill: $10.74 USD          5          Filled     Liquidated     
+2016-02-17 15:00:00  R          Buy Market      Fill: $56.30 USD          1          Filled     Liquidated     
+2016-02-17 15:00:00  MPLX       Buy Market      Fill: $20.94 USD          5          Filled     Liquidated     
+2016-02-18 15:00:00  KBH        Buy Market      Fill: $10.92 USD          60         Filled     Liquidated     
+2016-02-18 15:00:00  ROCK       Buy Market      Fill: $20.11 USD          32         Filled                    
+2016-02-18 15:00:00  MPLX       Buy Market      Fill: $22.42 USD          3          Filled     Liquidated     
+2016-02-19 15:00:00  ROCK       Sell Market     Fill: $25.16 USD          -6         Filled     Liquidated     
+2016-02-23 15:00:00  ANF        Sell Market     Fill: $27.78 USD          -2         Filled     Liquidated     
+2016-02-23 15:00:00  ROCK       Buy Market      Fill: $24.13 USD          1          Filled                    
+2016-02-23 15:00:00  MPLX       Buy Market      Fill: $25.37 USD          3          Filled     Liquidated     
+2016-02-24 15:00:00  MPLX       Sell Market     Fill: $24.85 USD          -1         Filled                    
+2016-02-25 15:00:00  ROCK       Sell Market     Fill: $24.53 USD          -1         Filled     Liquidated     
+2016-02-25 15:00:00  ALB        Buy Market      Fill: $53.29 USD          12         Filled                    
+2016-02-25 15:00:00  MPLX       Buy Market      Fill: $26.01 USD          1          Filled     Liquidated     
+2016-02-29 15:00:00  ALB        Sell Market     Fill: $56.57 USD          -1         Filled     Liquidated     
+2016-03-02 15:00:00  ALB        Sell Market     Fill: $58.66 USD          -11        Filled     Liquidated     
+2016-03-02 15:00:00  ANF        Sell Market     Fill: $29.34 USD          -1         Filled     Liquidated     
+2016-03-03 15:00:00  ROCK       Sell Market     Fill: $26.02 USD          -1         Filled     Liquidated     
+2016-03-03 15:00:00  MPLX       Buy Market      Fill: $26.95 USD          1          Filled     Liquidated     
+2016-03-04 15:00:00  R          Buy Market      Fill: $60.14 USD          11         Filled     Liquidated     
+2016-03-04 15:00:00  ROCK       Buy Market      Fill: $25.49 USD          1          Filled                    
+2016-03-04 15:00:00  ANF        Sell Market     Fill: $31.15 USD          -1         Filled     Liquidated     
+2016-03-04 15:00:00  ALB        Buy Market      Fill: $57.25 USD          11         Filled                    
+2016-03-07 15:00:00  ROCK       Sell Market     Fill: $26.16 USD          -1         Filled     Liquidated     
+2016-03-07 15:00:00  MPLX       Sell Market     Fill: $26.75 USD          -1         Filled                    
+2016-03-08 15:00:00  R          Sell Market     Fill: $62.83 USD          -10        Filled                    
+2016-03-09 15:00:00  ROCK       Buy Market      Fill: $25.55 USD          1          Filled                    
+2016-03-09 15:00:00  R          Sell Market     Fill: $59.77 USD          -1         Filled                    
+2016-03-09 15:00:00  MPLX       Sell Market     Fill: $24.43 USD          -2         Filled                    
+2016-03-10 15:00:00  MPLX       Buy Market      Fill: $25.44 USD          1          Filled     Liquidated     
+2016-03-11 15:00:00  MPLX       Sell Market     Fill: $24.87 USD          -1         Filled                    
+2016-03-14 14:00:00  ALB        Sell Market     Fill: $61.24 USD          -11        Filled     Liquidated     
+2016-03-14 14:00:00  ANF        Sell Market     Fill: $32.45 USD          -1         Filled     Liquidated     
+2016-03-14 14:00:00  ILMN       Sell Market     Fill: $154.12 USD         -4         Filled                    
+2016-03-14 14:00:00  MPLX       Buy Market      Fill: $26.23 USD          2          Filled     Liquidated     
+2016-03-15 14:00:00  ALB        Buy Market      Fill: $60.01 USD          11         Filled                    
+2016-03-16 14:00:00  ALB        Sell Market     Fill: $59.20 USD          -11        Filled     Liquidated     
+2016-03-16 14:00:00  ANF        Buy Market      Fill: $31.25 USD          1          Filled                    
+2016-03-16 14:00:00  MPLX       Buy Market      Fill: $27.77 USD          1          Filled     Liquidated     
+2016-03-17 14:00:00  R          Buy Market      Fill: $61.72 USD          11         Filled     Liquidated     
+2016-03-17 14:00:00  MPLX       Buy Market      Fill: $29.66 USD          2          Filled     Liquidated     
+2016-03-18 14:00:00  ROCK       Sell Market     Fill: $26.81 USD          -1         Filled     Liquidated     
+2016-03-21 14:00:00  MPLX       Sell Market     Fill: $29.17 USD          -1         Filled                    
+2016-03-22 14:00:00  ILMN       Buy Market      Fill: $150.76 USD         4          Filled     Liquidated     
+2016-03-23 14:00:00  ROCK       Sell Market     Fill: $27.24 USD          -1         Filled     Liquidated     
+2016-03-24 14:00:00  ROCK       Buy Market      Fill: $26.05 USD          1          Filled                    
+2016-03-24 14:00:00  MPLX       Sell Market     Fill: $27.53 USD          -1         Filled                    
+2016-03-29 14:00:00  MPLX       Sell Market     Fill: $26.68 USD          -1         Filled                    
+2016-03-30 14:00:00  ANF        Sell Market     Fill: $31.72 USD          -21        Filled     Liquidated     
+2016-03-30 14:00:00  ROCK       Sell Market     Fill: $27.80 USD          -1         Filled     Liquidated     
+2016-03-30 14:00:00  ALB        Buy Market      Fill: $62.98 USD          10         Filled                    
+2016-03-31 14:00:00  ALB        Sell Market     Fill: $63.98 USD          -10        Filled     Liquidated     
+2016-03-31 14:00:00  ANF        Buy Market      Fill: $31.71 USD          21         Filled                    
+2016-03-31 14:00:00  MPLX       Buy Market      Fill: $27.79 USD          1          Filled     Liquidated     
+2016-04-01 14:00:00  ROCK       Sell Market     Fill: $28.57 USD          -1         Filled     Liquidated     
+2016-04-01 14:00:00  MPLX       Buy Market      Fill: $29.69 USD          2          Filled     Liquidated     
+2016-04-04 14:00:00  MPLX       Sell Market     Fill: $28.31 USD          -1         Filled                    
+2016-04-05 14:00:00  ROCK       Buy Market      Fill: $26.91 USD          2          Filled                    
+2016-04-05 14:00:00  MPLX       Sell Market     Fill: $27.41 USD          -1         Filled                    
+2016-04-08 14:00:00  ANF        Buy Market      Fill: $29.60 USD          1          Filled                    
+2016-04-08 14:00:00  MPLX       Buy Market      Fill: $28.48 USD          1          Filled     Liquidated     
+2016-04-11 14:00:00  ROCK       Sell Market     Fill: $27.12 USD          -1         Filled     Liquidated     
+2016-04-11 14:00:00  ANF        Buy Market      Fill: $28.60 USD          1          Filled                    
+2016-04-12 14:00:00  MPLX       Buy Market      Fill: $29.66 USD          1          Filled     Liquidated     
+2016-04-13 14:00:00  MPLX       Buy Market      Fill: $30.49 USD          1          Filled     Liquidated     
+2016-04-14 14:00:00  MPLX       Sell Market     Fill: $29.98 USD          -1         Filled                    
+2016-04-18 14:00:00  ROCK       Sell Market     Fill: $27.68 USD          -24        Filled     Liquidated     
+2016-04-18 14:00:00  DPZ        Buy Market      Fill: $138.59 USD         4          Filled                    
+2016-04-19 14:00:00  DPZ        Sell Market     Fill: $138.64 USD         -4         Filled     Liquidated     
+2016-04-19 14:00:00  MPLX       Buy Market      Fill: $30.99 USD          1          Filled     Liquidated     
+2016-04-20 14:00:00  DPZ        Buy Market      Fill: $137.53 USD         4          Filled                    
+2016-04-20 14:00:00  MPLX       Buy Market      Fill: $31.96 USD          1          Filled     Liquidated     
+2016-04-21 14:00:00  MPLX       Buy Market      Fill: $32.15 USD          20         Filled     Liquidated     
+2016-04-21 14:00:00  ANF        Sell Market     Fill: $29.24 USD          -1         Filled     Liquidated     
+2016-04-26 14:00:00  DPZ        Sell Market     Fill: $133.67 USD         -4         Filled     Liquidated     
+2016-04-26 14:00:00  ANF        Buy Market      Fill: $28.24 USD          1          Filled                    
+2016-04-26 14:00:00  ALB        Buy Market      Fill: $66.58 USD          9          Filled                    
+2016-04-29 14:00:00  ALB        Sell Market     Fill: $66.38 USD          -9         Filled     Liquidated     
+2016-05-02 14:00:00  ANF        Buy Market      Fill: $26.73 USD          1          Filled                    
+2016-05-02 14:00:00  ALB        Buy Market      Fill: $66.20 USD          9          Filled                    
+2016-05-03 14:00:00  MPLX       Sell Market     Fill: $32.03 USD          -20        Filled                    
+2016-05-04 14:00:00  ANF        Sell Market     Fill: $26.54 USD          -24        Filled     Liquidated     
+2016-05-04 14:00:00  MPLX       Sell Market     Fill: $30.85 USD          -1         Filled                    
+2016-05-09 14:00:00  PNW        Buy Market      Fill: $72.98 USD          9          Filled                    
+2016-05-10 14:00:00  PNW        Sell Market     Fill: $73.58 USD          -9         Filled     Liquidated     
+2016-05-12 14:00:00  ALB        Sell Market     Fill: $74.63 USD          -1         Filled     Liquidated     
+2016-05-13 14:00:00  KSS        Sell Market     Fill: $35.15 USD          -18        Filled                    
+2016-05-16 14:00:00  KSS        Buy Market      Fill: $35.74 USD          18         Filled     Liquidated     
+2016-05-18 14:00:00  KSS        Sell Market     Fill: $35.23 USD          -18        Filled                    
+2016-05-19 14:00:00  MPLX       Buy Market      Fill: $31.25 USD          21         Filled     Liquidated     
+2016-05-19 14:00:00  ILMN       Sell Market     Fill: $136.28 USD         -4         Filled                    
+2016-05-19 14:00:00  KSS        Sell Market     Fill: $34.56 USD          -1         Filled                    
+2016-05-20 14:00:00  ANF        Buy Market      Fill: $23.86 USD          27         Filled                    
+2016-05-23 14:00:00  ANF        Sell Market     Fill: $24.42 USD          -27        Filled     Liquidated     
+2016-05-23 14:00:00  ILMN       Buy Market      Fill: $136.55 USD         4          Filled     Liquidated     
+2016-05-23 14:00:00  KSS        Buy Market      Fill: $35.84 USD          1          Filled     Liquidated     
+2016-05-26 14:00:00  ANF        Sell Market     Fill: $25.09 USD          -26        Filled                    
+2016-05-27 14:00:00  ANF        Sell Market     Fill: $21.14 USD          -5         Filled                    
+2016-05-27 14:00:00  KSS        Sell Market     Fill: $35.57 USD          -1         Filled                    
+2016-05-31 14:00:00  ANF        Sell Market     Fill: $20.19 USD          -2         Filled                    
+2016-05-31 14:00:00  KSS        Buy Market      Fill: $36.10 USD          1          Filled     Liquidated     
+2016-05-31 14:00:00  MPLX       Sell Market     Fill: $32.51 USD          -20        Filled                    
+2016-06-01 14:00:00  MPLX       Buy Market      Fill: $31.89 USD          20         Filled     Liquidated     
+2016-06-01 14:00:00  ANF        Sell Market     Fill: $19.89 USD          -1         Filled                    
+2016-06-02 14:00:00  KSS        Buy Market      Fill: $36.16 USD          18         Filled     Liquidated     
+2016-06-06 14:00:00  KSS        Sell Market     Fill: $38.05 USD          -17        Filled                    
+2016-06-06 14:00:00  ANF        Sell Market     Fill: $19.42 USD          -1         Filled                    
+2016-06-07 14:00:00  KSS        Buy Market      Fill: $37.33 USD          17         Filled     Liquidated     
+2016-06-07 14:00:00  ANF        Sell Market     Fill: $19.03 USD          -1         Filled                    
+2016-06-09 14:00:00  KSS        Sell Market     Fill: $38.14 USD          -17        Filled                    
+2016-06-10 14:00:00  KSS        Sell Market     Fill: $37.45 USD          -1         Filled                    
+2016-06-13 14:00:00  NDSN       Buy Market      Fill: $84.86 USD          8          Filled                    
+2016-06-14 14:00:00  KSS        Sell Market     Fill: $35.32 USD          -1         Filled                    
+2016-06-15 14:00:00  NDSN       Sell Market     Fill: $84.90 USD          -8         Filled     Liquidated     
+2016-06-15 14:00:00  KSS        Buy Market      Fill: $34.49 USD          19         Filled     Liquidated     
+2016-06-15 14:00:00  ILMN       Sell Market     Fill: $133.91 USD         -5         Filled                    
+2016-06-15 14:00:00  ANF        Sell Market     Fill: $18.62 USD          -1         Filled                    
+2016-06-16 14:00:00  ANF        Buy Market      Fill: $19.15 USD          1          Filled     Liquidated     
+2016-06-17 14:00:00  ANF        Sell Market     Fill: $18.66 USD          -1         Filled                    
+2016-06-20 14:00:00  ANF        Buy Market      Fill: $18.97 USD          1          Filled     Liquidated     
+2016-06-22 14:00:00  NDSN       Buy Market      Fill: $85.18 USD          8          Filled                    
+2016-06-24 14:00:00  NDSN       Sell Market     Fill: $87.36 USD          -8         Filled     Liquidated     
+2016-06-24 14:00:00  ILMN       Buy Market      Fill: $142.46 USD         1          Filled     Liquidated     
+2016-06-27 14:00:00  ILMN       Sell Market     Fill: $135.08 USD         -1         Filled                    
+2016-06-27 14:00:00  ANF        Sell Market     Fill: $17.78 USD          -3         Filled                    
+2016-06-28 14:00:00  ALB        Buy Market      Fill: $75.36 USD          1          Filled                    
+2016-06-28 14:00:00  ANF        Sell Market     Fill: $16.80 USD          -2         Filled                    
+2016-06-30 14:00:00  ALB        Sell Market     Fill: $79.12 USD          -1         Filled     Liquidated     
+2016-06-30 14:00:00  ANF        Buy Market      Fill: $17.48 USD          2          Filled     Liquidated     
+2016-07-01 14:00:00  ILMN       Buy Market      Fill: $136.42 USD         5          Filled     Liquidated     
+2016-07-05 14:00:00  KSS        Sell Market     Fill: $37.99 USD          -18        Filled                    
+2016-07-05 14:00:00  ANF        Buy Market      Fill: $18.14 USD          1          Filled     Liquidated     
+2016-07-06 14:00:00  NDSN       Buy Market      Fill: $82.56 USD          8          Filled                    
+2016-07-06 14:00:00  KSS        Sell Market     Fill: $36.73 USD          -1         Filled                    
+2016-07-06 14:00:00  ANF        Sell Market     Fill: $17.57 USD          -1         Filled                    
+2016-07-07 14:00:00  NDSN       Sell Market     Fill: $83.83 USD          -8         Filled     Liquidated     
+2016-07-07 14:00:00  KSS        Buy Market      Fill: $37.77 USD          19         Filled     Liquidated     
+2016-07-07 14:00:00  KBH        Buy Market      Fill: $15.44 USD          45         Filled                    
+2016-07-07 14:00:00  ANF        Buy Market      Fill: $18.09 USD          1          Filled     Liquidated     
+2016-07-08 14:00:00  ROCK       Buy Market      Fill: $32.29 USD          21         Filled                    
+2016-07-11 14:00:00  KBH        Sell Market     Fill: $16.11 USD          -2         Filled     Liquidated     
+2016-07-11 14:00:00  ANF        Buy Market      Fill: $19.09 USD          2          Filled     Liquidated     
+2016-07-12 14:00:00  ROCK       Sell Market     Fill: $35.02 USD          -1         Filled     Liquidated     
+2016-07-12 14:00:00  KSS        Sell Market     Fill: $39.47 USD          -17        Filled                    
+2016-07-14 14:00:00  KBH        Sell Market     Fill: $16.42 USD          -43        Filled     Liquidated     
+2016-07-14 14:00:00  NUE        Buy Market      Fill: $56.41 USD          12         Filled                    
+2016-07-14 14:00:00  KSS        Sell Market     Fill: $38.52 USD          -1         Filled                    
+2016-07-14 14:00:00  ANF        Sell Market     Fill: $19.16 USD          -1         Filled                    
+2016-07-15 14:00:00  ROCK       Sell Market     Fill: $35.87 USD          -1         Filled     Liquidated     
+2016-07-18 14:00:00  NUE        Sell Market     Fill: $56.66 USD          -12        Filled     Liquidated     
+2016-07-18 14:00:00  KBH        Buy Market      Fill: $16.43 USD          43         Filled                    
+2016-07-19 14:00:00  KSS        Buy Market      Fill: $39.07 USD          18         Filled     Liquidated     
+2016-07-19 14:00:00  ANF        Buy Market      Fill: $19.80 USD          2          Filled     Liquidated     
+2016-07-20 14:00:00  KSS        Sell Market     Fill: $38.98 USD          -18        Filled                    
+2016-07-21 14:00:00  KSS        Buy Market      Fill: $39.58 USD          1          Filled     Liquidated     
+2016-07-22 14:00:00  ROCK       Buy Market      Fill: $35.07 USD          1          Filled                    
+2016-07-22 14:00:00  ANF        Buy Market      Fill: $20.27 USD          1          Filled     Liquidated     
+2016-07-27 14:00:00  ROCK       Sell Market     Fill: $35.67 USD          -1         Filled     Liquidated     
+2016-07-27 14:00:00  KBH        Sell Market     Fill: $16.55 USD          -1         Filled     Liquidated     
+2016-07-27 14:00:00  ANF        Buy Market      Fill: $20.82 USD          1          Filled     Liquidated     
+2016-07-29 14:00:00  KBH        Sell Market     Fill: $16.62 USD          -42        Filled     Liquidated     
+2016-07-29 14:00:00  ROCK       Buy Market      Fill: $34.27 USD          1          Filled                    
+2016-07-29 14:00:00  NDSN       Buy Market      Fill: $88.43 USD          7          Filled                    
+2016-07-29 14:00:00  ANF        Sell Market     Fill: $20.46 USD          -1         Filled                    
+2016-08-01 14:00:00  NDSN       Sell Market     Fill: $88.29 USD          -7         Filled     Liquidated     
+2016-08-01 14:00:00  ROCK       Sell Market     Fill: $35.28 USD          -1         Filled     Liquidated     
+2016-08-01 14:00:00  KSS        Buy Market      Fill: $41.58 USD          1          Filled     Liquidated     
+2016-08-02 14:00:00  KSS        Sell Market     Fill: $41.14 USD          -1         Filled                    
+2016-08-03 14:00:00  KSS        Buy Market      Fill: $37.88 USD          17         Filled     Liquidated     
+2016-08-03 14:00:00  ANF        Sell Market     Fill: $19.82 USD          -1         Filled                    
+2016-08-04 14:00:00  ALB        Sell Market     Fill: $83.95 USD          -8         Filled     Liquidated     
+2016-08-04 14:00:00  MPLX       Buy Market      Fill: $33.00 USD          21         Filled                    
+2016-08-04 14:00:00  KSS        Sell Market     Fill: $38.71 USD          -18        Filled                    
+2016-08-08 14:00:00  ROCK       Sell Market     Fill: $38.58 USD          -1         Filled     Liquidated     
+2016-08-08 14:00:00  ANF        Buy Market      Fill: $21.22 USD          2          Filled     Liquidated     
+2016-08-10 14:00:00  KSS        Buy Market      Fill: $37.70 USD          18         Filled     Liquidated     
+2016-08-10 14:00:00  ANF        Sell Market     Fill: $20.70 USD          -1         Filled                    
+2016-08-11 14:00:00  MPLX       Buy Market      Fill: $32.23 USD          1          Filled                    
+2016-08-11 14:00:00  CHRW       Sell Market     Fill: $69.03 USD          -10        Filled                    
+2016-08-12 14:00:00  CHRW       Buy Market      Fill: $69.03 USD          10         Filled     Liquidated     
+2016-08-12 14:00:00  MPLX       Sell Market     Fill: $32.45 USD          -22        Filled     Liquidated     
+2016-08-12 14:00:00  ALB        Buy Market      Fill: $82.57 USD          8          Filled                    
+2016-08-12 14:00:00  ANF        Buy Market      Fill: $21.50 USD          2          Filled     Liquidated     
+2016-08-16 14:00:00  ALB        Sell Market     Fill: $84.09 USD          -8         Filled     Liquidated     
+2016-08-16 14:00:00  ALGN       Buy Market      Fill: $96.01 USD          7          Filled                    
+2016-08-16 14:00:00  ANF        Buy Market      Fill: $22.48 USD          1          Filled     Liquidated     
+2016-08-17 14:00:00  ALGN       Sell Market     Fill: $94.72 USD          -7         Filled     Liquidated     
+2016-08-18 14:00:00  ANF        Sell Market     Fill: $21.92 USD          -1         Filled                    
+2016-08-19 14:00:00  ALB        Buy Market      Fill: $81.26 USD          8          Filled                    
+2016-08-19 14:00:00  ANF        Buy Market      Fill: $22.40 USD          1          Filled     Liquidated     
+2016-08-22 14:00:00  ROCK       Buy Market      Fill: $36.93 USD          1          Filled                    
+2016-08-23 14:00:00  ALB        Sell Market     Fill: $83.83 USD          -8         Filled     Liquidated     
+2016-08-23 14:00:00  ROCK       Sell Market     Fill: $37.97 USD          -1         Filled     Liquidated     
+2016-08-31 14:00:00  ANF        Sell Market     Fill: $18.29 USD          -8         Filled                    
+2016-09-01 14:00:00  ANF        Sell Market     Fill: $17.73 USD          -1         Filled                    
+2016-09-02 14:00:00  ANF        Sell Market     Fill: $17.32 USD          -1         Filled                    
+2016-09-06 14:00:00  ANF        Sell Market     Fill: $17.01 USD          -1         Filled                    
+
+... i 5932 więcej zleceń
+
+Uwaga: Zlecenia były realizowane w 2 różnych momentach czasowych.
+Przykładowe czasy: 14:00:00, 15:00:00...
+
+====================================================================================================
+ MOMENTUM 12M - WSZYSTKIE ZLECENIA (Znaleziono: 5540)
+====================================================================================================
+
+Date Time            Symbol     Type            Price                     Quantity   Status     Tag            
+----------------------------------------------------------------------------------------------------
+2016-01-04 15:00:00  ROCK       Buy Market      Fill: $25.44 USD          19         Filled                    
+2016-01-04 15:00:00  EQIX       Buy Market      Fill: $302.39 USD         1          Filled                    
+2016-01-04 15:00:00  CRM        Buy Market      Fill: $78.37 USD          6          Filled                    
+2016-01-04 15:00:00  LUMN       Sell Market     Fill: $25.17 USD          -19        Filled                    
+2016-01-04 15:00:00  R          Sell Market     Fill: $56.83 USD          -8         Filled                    
+2016-01-04 15:00:00  MPLX       Sell Market     Fill: $39.35 USD          -12        Filled                    
+2016-01-05 15:00:00  ROCK       Buy Market      Fill: $24.07 USD          1          Filled                    
+2016-01-06 15:00:00  EZA        Sell Market     Fill: $45.75 USD          -10        Filled                    
+2016-01-07 15:00:00  EZA        Buy Market      Fill: $44.38 USD          10         Filled     Liquidated     
+2016-01-07 15:00:00  ROCK       Buy Market      Fill: $23.81 USD          1          Filled                    
+2016-01-07 15:00:00  LUMN       Sell Market     Fill: $24.72 USD          -1         Filled                    
+2016-01-07 15:00:00  KBH        Sell Market     Fill: $11.80 USD          -42        Filled                    
+2016-01-07 15:00:00  R          Sell Market     Fill: $54.09 USD          -1         Filled                    
+2016-01-07 15:00:00  MPLX       Sell Market     Fill: $36.83 USD          -1         Filled                    
+2016-01-08 15:00:00  CRM        Sell Market     Fill: $74.29 USD          -6         Filled     Liquidated     
+2016-01-08 15:00:00  ROCK       Buy Market      Fill: $23.08 USD          1          Filled                    
+2016-01-08 15:00:00  LUMN       Sell Market     Fill: $24.23 USD          -1         Filled                    
+2016-01-08 15:00:00  KBH        Sell Market     Fill: $10.06 USD          -8         Filled                    
+2016-01-08 15:00:00  MPLX       Sell Market     Fill: $34.43 USD          -1         Filled                    
+2016-01-11 15:00:00  KBH        Buy Market      Fill: $10.08 USD          50         Filled     Liquidated     
+2016-01-11 15:00:00  ROCK       Buy Market      Fill: $22.09 USD          1          Filled                    
+2016-01-11 15:00:00  EZA        Sell Market     Fill: $41.27 USD          -12        Filled                    
+2016-01-11 15:00:00  R          Sell Market     Fill: $50.57 USD          -1         Filled                    
+2016-01-12 15:00:00  MPLX       Sell Market     Fill: $32.70 USD          -1         Filled                    
+2016-01-13 15:00:00  LUMN       Sell Market     Fill: $23.40 USD          -1         Filled                    
+2016-01-14 15:00:00  ROCK       Buy Market      Fill: $20.93 USD          1          Filled                    
+2016-01-14 15:00:00  CRM        Buy Market      Fill: $72.38 USD          7          Filled                    
+2016-01-14 15:00:00  MPLX       Sell Market     Fill: $30.34 USD          -2         Filled                    
+2016-01-15 15:00:00  CRM        Sell Market     Fill: $73.06 USD          -7         Filled     Liquidated     
+2016-01-15 15:00:00  LUMN       Buy Market      Fill: $23.89 USD          1          Filled     Liquidated     
+2016-01-15 15:00:00  MPLX       Buy Market      Fill: $31.90 USD          1          Filled     Liquidated     
+2016-01-19 15:00:00  CRM        Buy Market      Fill: $70.87 USD          7          Filled                    
+2016-01-19 15:00:00  EZA        Sell Market     Fill: $39.10 USD          -1         Filled                    
+2016-01-19 15:00:00  LUMN       Sell Market     Fill: $23.29 USD          -1         Filled                    
+2016-01-19 15:00:00  MPLX       Sell Market     Fill: $29.50 USD          -1         Filled                    
+2016-01-20 15:00:00  CRM        Sell Market     Fill: $70.81 USD          -7         Filled     Liquidated     
+2016-01-20 15:00:00  MPLX       Sell Market     Fill: $28.37 USD          -1         Filled                    
+2016-01-21 15:00:00  LUMN       Sell Market     Fill: $22.24 USD          -1         Filled                    
+2016-01-21 15:00:00  R          Sell Market     Fill: $48.32 USD          -1         Filled                    
+2016-01-21 15:00:00  MPLX       Sell Market     Fill: $25.37 USD          -3         Filled                    
+2016-01-22 15:00:00  ROCK       Buy Market      Fill: $20.29 USD          1          Filled                    
+2016-01-22 15:00:00  R          Buy Market      Fill: $49.52 USD          1          Filled     Liquidated     
+2016-01-22 15:00:00  MPLX       Buy Market      Fill: $27.71 USD          3          Filled     Liquidated     
+2016-01-25 15:00:00  LUMN       Buy Market      Fill: $23.80 USD          2          Filled     Liquidated     
+2016-01-25 15:00:00  EZA        Buy Market      Fill: $41.20 USD          1          Filled     Liquidated     
+2016-01-25 15:00:00  MPLX       Buy Market      Fill: $29.79 USD          1          Filled     Liquidated     
+2016-01-26 15:00:00  MPLX       Sell Market     Fill: $27.53 USD          -1         Filled                    
+2016-01-27 15:00:00  R          Buy Market      Fill: $52.56 USD          1          Filled     Liquidated     
+2016-01-27 15:00:00  MPLX       Buy Market      Fill: $28.96 USD          1          Filled     Liquidated     
+2016-01-28 15:00:00  LUMN       Buy Market      Fill: $24.62 USD          21         Filled     Liquidated     
+2016-01-28 15:00:00  WHR        Sell Market     Fill: $132.44 USD         -3         Filled                    
+2016-01-28 15:00:00  MPLX       Sell Market     Fill: $28.33 USD          -1         Filled                    
+2016-01-29 15:00:00  EZA        Buy Market      Fill: $43.25 USD          1          Filled     Liquidated     
+2016-01-29 15:00:00  R          Sell Market     Fill: $50.90 USD          -1         Filled                    
+2016-01-29 15:00:00  MPLX       Buy Market      Fill: $29.33 USD          1          Filled     Liquidated     
+2016-02-01 15:00:00  ROCK       Sell Market     Fill: $21.23 USD          -25        Filled     Liquidated     
+2016-02-01 15:00:00  WHR        Buy Market      Fill: $134.35 USD         3          Filled     Liquidated     
+2016-02-01 15:00:00  R          Buy Market      Fill: $53.17 USD          1          Filled     Liquidated     
+2016-02-01 15:00:00  MPLX       Buy Market      Fill: $30.74 USD          1          Filled     Liquidated     
+2016-02-02 15:00:00  LUMN       Sell Market     Fill: $25.90 USD          -19        Filled                    
+2016-02-03 15:00:00  LUMN       Buy Market      Fill: $25.21 USD          19         Filled     Liquidated     
+2016-02-03 15:00:00  EZA        Sell Market     Fill: $42.30 USD          -1         Filled                    
+2016-02-03 15:00:00  WHR        Sell Market     Fill: $132.30 USD         -3         Filled                    
+2016-02-03 15:00:00  MPLX       Sell Market     Fill: $29.10 USD          -1         Filled                    
+2016-02-04 15:00:00  WHR        Buy Market      Fill: $135.04 USD         3          Filled     Liquidated     
+2016-02-04 15:00:00  R          Sell Market     Fill: $51.96 USD          -1         Filled                    
+2016-02-04 15:00:00  EZA        Buy Market      Fill: $44.40 USD          1          Filled     Liquidated     
+2016-02-04 15:00:00  KSS        Sell Market     Fill: $51.14 USD          -10        Filled                    
+2016-02-04 15:00:00  MPLX       Sell Market     Fill: $21.85 USD          -6         Filled                    
+2016-02-05 15:00:00  ROCK       Buy Market      Fill: $20.29 USD          25         Filled                    
+2016-02-05 15:00:00  R          Buy Market      Fill: $56.68 USD          1          Filled     Liquidated     
+2016-02-05 15:00:00  KSS        Sell Market     Fill: $41.51 USD          -2         Filled                    
+2016-02-05 15:00:00  MPLX       Sell Market     Fill: $21.75 USD          -1         Filled                    
+2016-02-08 15:00:00  ROCK       Sell Market     Fill: $19.75 USD          -25        Filled     Liquidated     
+2016-02-08 15:00:00  EZA        Buy Market      Fill: $44.83 USD          11         Filled     Liquidated     
+2016-02-08 15:00:00  MPLX       Sell Market     Fill: $20.24 USD          -2         Filled                    
+2016-02-09 15:00:00  ROCK       Buy Market      Fill: $19.58 USD          27         Filled                    
+2016-02-09 15:00:00  LUMN       Sell Market     Fill: $25.63 USD          -20        Filled                    
+2016-02-09 15:00:00  MPLX       Sell Market     Fill: $18.44 USD          -2         Filled                    
+2016-02-10 15:00:00  ROCK       Sell Market     Fill: $19.25 USD          -27        Filled     Liquidated     
+2016-02-10 15:00:00  EQIX       Buy Market      Fill: $265.00 USD         1          Filled                    
+2016-02-10 15:00:00  LUMN       Sell Market     Fill: $24.81 USD          -1         Filled                    
+2016-02-10 15:00:00  MPLX       Sell Market     Fill: $18.03 USD          -1         Filled                    
+2016-02-11 15:00:00  LUMN       Buy Market      Fill: $24.59 USD          21         Filled     Liquidated     
+2016-02-11 15:00:00  EQIX       Sell Market     Fill: $273.40 USD         -1         Filled     Liquidated     
+2016-02-11 15:00:00  KSS        Sell Market     Fill: $40.08 USD          -1         Filled                    
+2016-02-12 15:00:00  CAG        Buy Market      Fill: $31.33 USD          17         Filled                    
+2016-02-12 15:00:00  R          Sell Market     Fill: $52.46 USD          -1         Filled                    
+2016-02-12 15:00:00  MPLX       Sell Market     Fill: $16.54 USD          -3         Filled                    
+2016-02-16 15:00:00  CAG        Sell Market     Fill: $32.35 USD          -1         Filled     Liquidated     
+2016-02-16 15:00:00  MPLX       Buy Market      Fill: $18.25 USD          3          Filled     Liquidated     
+2016-02-17 15:00:00  KSS        Buy Market      Fill: $42.62 USD          1          Filled     Liquidated     
+2016-02-17 15:00:00  R          Buy Market      Fill: $56.30 USD          1          Filled     Liquidated     
+2016-02-17 15:00:00  MPLX       Buy Market      Fill: $20.94 USD          4          Filled     Liquidated     
+2016-02-18 15:00:00  CAG        Sell Market     Fill: $32.45 USD          -16        Filled     Liquidated     
+2016-02-18 15:00:00  KSS        Buy Market      Fill: $43.91 USD          12         Filled     Liquidated     
+2016-02-18 15:00:00  ROCK       Buy Market      Fill: $20.11 USD          25         Filled                    
+2016-02-18 15:00:00  MPLX       Buy Market      Fill: $22.42 USD          2          Filled     Liquidated     
+2016-02-19 15:00:00  ROCK       Sell Market     Fill: $25.16 USD          -4         Filled     Liquidated     
+2016-02-19 15:00:00  KSS        Sell Market     Fill: $44.83 USD          -11        Filled                    
+2016-02-22 15:00:00  KSS        Sell Market     Fill: $44.38 USD          -1         Filled                    
+2016-02-22 15:00:00  MPLX       Buy Market      Fill: $23.53 USD          1          Filled     Liquidated     
+2016-02-23 15:00:00  KSS        Buy Market      Fill: $44.95 USD          1          Filled     Liquidated     
+2016-02-23 15:00:00  MPLX       Buy Market      Fill: $25.37 USD          2          Filled     Liquidated     
+2016-02-24 15:00:00  EZA        Sell Market     Fill: $45.82 USD          -11        Filled                    
+2016-02-24 15:00:00  MPLX       Sell Market     Fill: $24.85 USD          -1         Filled                    
+2016-02-25 15:00:00  EZA        Buy Market      Fill: $45.23 USD          11         Filled     Liquidated     
+2016-02-25 15:00:00  MPLX       Buy Market      Fill: $26.01 USD          1          Filled     Liquidated     
+2016-02-26 15:00:00  EZA        Sell Market     Fill: $45.60 USD          -11        Filled                    
+2016-03-01 15:00:00  EZA        Buy Market      Fill: $44.84 USD          11         Filled     Liquidated     
+2016-03-02 15:00:00  ROCK       Sell Market     Fill: $25.31 USD          -1         Filled     Liquidated     
+2016-03-02 15:00:00  ANF        Buy Market      Fill: $29.34 USD          17         Filled                    
+2016-03-02 15:00:00  MPLX       Buy Market      Fill: $26.53 USD          1          Filled     Liquidated     
+2016-03-03 15:00:00  EZA        Sell Market     Fill: $48.37 USD          -10        Filled                    
+2016-03-04 15:00:00  EQIX       Sell Market     Fill: $310.58 USD         -1         Filled     Liquidated     
+2016-03-04 15:00:00  EZA        Buy Market      Fill: $48.71 USD          10         Filled     Liquidated     
+2016-03-04 15:00:00  DPZ        Buy Market      Fill: $132.89 USD         3          Filled                    
+2016-03-04 15:00:00  R          Buy Market      Fill: $60.14 USD          1          Filled     Liquidated     
+2016-03-07 15:00:00  ANF        Sell Market     Fill: $32.27 USD          -1         Filled     Liquidated     
+2016-03-08 15:00:00  KSS        Buy Market      Fill: $48.61 USD          1          Filled     Liquidated     
+2016-03-09 15:00:00  MPLX       Sell Market     Fill: $24.43 USD          -2         Filled                    
+2016-03-10 15:00:00  DPZ        Sell Market     Fill: $133.76 USD         -3         Filled     Liquidated     
+2016-03-10 15:00:00  MPLX       Buy Market      Fill: $25.44 USD          1          Filled     Liquidated     
+2016-03-11 15:00:00  ROCK       Buy Market      Fill: $25.06 USD          1          Filled                    
+2016-03-11 15:00:00  EQIX       Buy Market      Fill: $306.71 USD         1          Filled                    
+2016-03-11 15:00:00  MPLX       Sell Market     Fill: $24.87 USD          -1         Filled                    
+2016-03-14 14:00:00  MPLX       Buy Market      Fill: $26.23 USD          1          Filled     Liquidated     
+2016-03-15 14:00:00  ROCK       Sell Market     Fill: $25.64 USD          -1         Filled     Liquidated     
+2016-03-15 14:00:00  MPLX       Buy Market      Fill: $26.76 USD          1          Filled     Liquidated     
+2016-03-17 14:00:00  MPLX       Buy Market      Fill: $29.66 USD          2          Filled     Liquidated     
+2016-03-18 14:00:00  ROCK       Sell Market     Fill: $26.81 USD          -1         Filled     Liquidated     
+2016-03-21 14:00:00  EQIX       Sell Market     Fill: $315.76 USD         -1         Filled     Liquidated     
+2016-03-22 14:00:00  EQIX       Buy Market      Fill: $317.39 USD         1          Filled                    
+2016-03-22 14:00:00  R          Buy Market      Fill: $66.29 USD          1          Filled     Liquidated     
+2016-03-22 14:00:00  MPLX       Sell Market     Fill: $28.29 USD          -1         Filled                    
+2016-03-23 14:00:00  KSS        Sell Market     Fill: $47.07 USD          -1         Filled                    
+2016-03-24 14:00:00  ROCK       Buy Market      Fill: $26.05 USD          1          Filled                    
+2016-03-24 14:00:00  R          Sell Market     Fill: $64.70 USD          -1         Filled                    
+2016-03-28 14:00:00  ROCK       Sell Market     Fill: $26.61 USD          -1         Filled     Liquidated     
+2016-03-29 14:00:00  MPLX       Sell Market     Fill: $26.68 USD          -1         Filled                    
+2016-03-31 14:00:00  ROCK       Sell Market     Fill: $28.29 USD          -1         Filled     Liquidated     
+2016-03-31 14:00:00  ALGN       Buy Market      Fill: $71.99 USD          7          Filled                    
+2016-03-31 14:00:00  PDBC       Sell Market     Fill: $15.46 USD          -34        Filled                    
+2016-04-01 14:00:00  MPLX       Buy Market      Fill: $29.69 USD          2          Filled     Liquidated     
+2016-04-04 14:00:00  PDBC       Buy Market      Fill: $15.17 USD          34         Filled     Liquidated     
+2016-04-04 14:00:00  MPLX       Sell Market     Fill: $28.31 USD          -1         Filled                    
+2016-04-05 14:00:00  ROCK       Buy Market      Fill: $26.91 USD          1          Filled                    
+2016-04-05 14:00:00  PDBC       Sell Market     Fill: $14.99 USD          -35        Filled                    
+2016-04-05 14:00:00  MPLX       Sell Market     Fill: $27.41 USD          -1         Filled                    
+2016-04-06 14:00:00  PDBC       Buy Market      Fill: $14.92 USD          35         Filled     Liquidated     
+2016-04-06 14:00:00  ANF        Buy Market      Fill: $30.80 USD          1          Filled                    
+2016-04-07 14:00:00  ANF        Sell Market     Fill: $30.64 USD          -17        Filled     Liquidated     
+2016-04-07 14:00:00  DPZ        Buy Market      Fill: $135.96 USD         3          Filled                    
+2016-04-08 14:00:00  KSS        Sell Market     Fill: $43.99 USD          -1         Filled                    
+2016-04-08 14:00:00  MPLX       Buy Market      Fill: $28.48 USD          1          Filled     Liquidated     
+2016-04-11 14:00:00  EQIX       Sell Market     Fill: $326.00 USD         -1         Filled     Liquidated     
+2016-04-13 14:00:00  MPLX       Buy Market      Fill: $30.49 USD          1          Filled     Liquidated     
+2016-04-15 14:00:00  R          Buy Market      Fill: $65.94 USD          8          Filled     Liquidated     
+2016-04-18 14:00:00  R          Sell Market     Fill: $66.23 USD          -7         Filled                    
+2016-04-19 14:00:00  ALGN       Sell Market     Fill: $73.63 USD          -7         Filled     Liquidated     
+2016-04-19 14:00:00  R          Buy Market      Fill: $66.65 USD          7          Filled     Liquidated     
+2016-04-19 14:00:00  ROCK       Sell Market     Fill: $27.93 USD          -1         Filled     Liquidated     
+2016-04-19 14:00:00  EQIX       Buy Market      Fill: $325.60 USD         1          Filled                    
+2016-04-20 14:00:00  EQIX       Sell Market     Fill: $324.86 USD         -1         Filled     Liquidated     
+2016-04-20 14:00:00  KSS        Buy Market      Fill: $44.86 USD          1          Filled     Liquidated     
+2016-04-20 14:00:00  MPLX       Buy Market      Fill: $31.96 USD          1          Filled     Liquidated     
+2016-04-21 14:00:00  DPZ        Sell Market     Fill: $140.01 USD         -3         Filled     Liquidated     
+2016-04-21 14:00:00  ALGN       Buy Market      Fill: $73.55 USD          7          Filled                    
+2016-04-21 14:00:00  R          Sell Market     Fill: $68.08 USD          -7         Filled                    
+2016-04-22 14:00:00  ALGN       Sell Market     Fill: $73.30 USD          -7         Filled     Liquidated     
+2016-04-22 14:00:00  R          Buy Market      Fill: $65.92 USD          7          Filled     Liquidated     
+2016-04-25 14:00:00  EQIX       Buy Market      Fill: $322.05 USD         1          Filled                    
+2016-04-25 14:00:00  MPLX       Buy Market      Fill: $33.05 USD          1          Filled     Liquidated     
+2016-04-26 14:00:00  ROCK       Buy Market      Fill: $27.48 USD          1          Filled                    
+2016-04-26 14:00:00  MPLX       Sell Market     Fill: $31.86 USD          -1         Filled                    
+2016-04-28 14:00:00  EQIX       Sell Market     Fill: $331.81 USD         -1         Filled     Liquidated     
+2016-04-28 14:00:00  ROCK       Sell Market     Fill: $27.79 USD          -1         Filled     Liquidated     
+2016-05-02 14:00:00  ROCK       Buy Market      Fill: $26.45 USD          1          Filled                    
+2016-05-04 14:00:00  ROCK       Buy Market      Fill: $25.12 USD          1          Filled                    
+2016-05-04 14:00:00  EQIX       Buy Market      Fill: $332.89 USD         1          Filled                    
+2016-05-05 14:00:00  EQIX       Sell Market     Fill: $334.44 USD         -1         Filled     Liquidated     
+2016-05-05 14:00:00  ALGN       Buy Market      Fill: $74.81 USD          7          Filled                    
+2016-05-05 14:00:00  KSS        Sell Market     Fill: $42.44 USD          -1         Filled                    
+2016-05-05 14:00:00  MPLX       Sell Market     Fill: $30.65 USD          -1         Filled                    
+2016-05-06 14:00:00  ALGN       Sell Market     Fill: $75.56 USD          -7         Filled     Liquidated     
+2016-05-09 14:00:00  ROCK       Sell Market     Fill: $29.30 USD          -2         Filled     Liquidated     
+2016-05-09 14:00:00  EQIX       Buy Market      Fill: $336.96 USD         1          Filled                    
+2016-05-10 14:00:00  ROCK       Buy Market      Fill: $26.83 USD          1          Filled                    
+2016-05-12 14:00:00  KSS        Sell Market     Fill: $38.70 USD          -1         Filled                    
+2016-05-13 14:00:00  KSS        Sell Market     Fill: $35.15 USD          -2         Filled                    
+2016-05-17 14:00:00  KSS        Buy Market      Fill: $36.20 USD          1          Filled     Liquidated     
+2016-05-18 14:00:00  EQIX       Sell Market     Fill: $342.31 USD         -1         Filled     Liquidated     
+2016-05-18 14:00:00  ALGN       Buy Market      Fill: $75.96 USD          7          Filled                    
+2016-05-18 14:00:00  KSS        Sell Market     Fill: $35.23 USD          -1         Filled                    
+2016-05-23 14:00:00  ALGN       Sell Market     Fill: $77.45 USD          -1         Filled     Liquidated     
+2016-05-23 14:00:00  MPLX       Buy Market      Fill: $33.14 USD          1          Filled     Liquidated     
+2016-05-25 14:00:00  ALGN       Sell Market     Fill: $78.78 USD          -6         Filled     Liquidated     
+2016-05-25 14:00:00  ROCK       Sell Market     Fill: $29.49 USD          -1         Filled     Liquidated     
+2016-05-25 14:00:00  EQIX       Buy Market      Fill: $354.73 USD         1          Filled                    
+2016-06-01 14:00:00  MPLX       Sell Market     Fill: $31.89 USD          -1         Filled                    
+2016-06-02 14:00:00  MPLX       Buy Market      Fill: $33.29 USD          1          Filled     Liquidated     
+2016-06-03 14:00:00  KSS        Buy Market      Fill: $37.38 USD          1          Filled     Liquidated     
+2016-06-06 14:00:00  ROCK       Sell Market     Fill: $30.82 USD          -1         Filled     Liquidated     
+2016-06-08 14:00:00  MPLX       Buy Market      Fill: $34.34 USD          1          Filled     Liquidated     
+2016-06-13 14:00:00  MPLX       Sell Market     Fill: $33.00 USD          -1         Filled                    
+2016-06-14 14:00:00  KSS        Sell Market     Fill: $35.32 USD          -1         Filled                    
+2016-06-15 14:00:00  MPLX       Sell Market     Fill: $31.82 USD          -1         Filled                    
+2016-06-16 14:00:00  ILMN       Sell Market     Fill: $132.89 USD         -4         Filled                    
+2016-06-20 14:00:00  MPLX       Buy Market      Fill: $32.44 USD          1          Filled     Liquidated     
+2016-06-21 14:00:00  ALB        Buy Market      Fill: $83.01 USD          6          Filled                    
+2016-06-21 14:00:00  KSS        Buy Market      Fill: $36.64 USD          1          Filled     Liquidated     
+2016-06-23 14:00:00  ILMN       Buy Market      Fill: $136.92 USD         4          Filled     Liquidated     
+2016-06-24 14:00:00  ALB        Sell Market     Fill: $84.41 USD          -6         Filled     Liquidated     
+2016-06-24 14:00:00  ILMN       Sell Market     Fill: $142.46 USD         -3         Filled                    
+2016-06-27 14:00:00  ILMN       Buy Market      Fill: $135.08 USD         3          Filled     Liquidated     
+2016-06-27 14:00:00  KSS        Sell Market     Fill: $36.16 USD          -1         Filled                    
+2016-06-28 14:00:00  ROCK       Buy Market      Fill: $30.07 USD          1          Filled                    
+2016-06-28 14:00:00  ILMN       Sell Market     Fill: $131.66 USD         -4         Filled                    
+2016-06-28 14:00:00  MPLX       Sell Market     Fill: $31.42 USD          -1         Filled                    
+2016-06-29 14:00:00  KSS        Buy Market      Fill: $37.62 USD          1          Filled     Liquidated     
+2016-06-29 14:00:00  MPLX       Buy Market      Fill: $32.64 USD          1          Filled     Liquidated     
+2016-06-30 14:00:00  ROCK       Sell Market     Fill: $30.65 USD          -1         Filled     Liquidated     
+2016-07-06 14:00:00  EQIX       Sell Market     Fill: $386.12 USD         -1         Filled     Liquidated     
+2016-07-06 14:00:00  ILMN       Buy Market      Fill: $134.79 USD         4          Filled     Liquidated     
+2016-07-06 14:00:00  ALB        Buy Market      Fill: $79.90 USD          6          Filled                    
+2016-07-06 14:00:00  MPLX       Sell Market     Fill: $32.05 USD          -1         Filled                    
+2016-07-08 14:00:00  MPLX       Buy Market      Fill: $32.58 USD          1          Filled     Liquidated     
+2016-07-11 14:00:00  ROCK       Sell Market     Fill: $33.12 USD          -1         Filled     Liquidated     
+2016-07-12 14:00:00  ROCK       Sell Market     Fill: $35.02 USD          -1         Filled     Liquidated     
+2016-07-13 14:00:00  ILMN       Sell Market     Fill: $144.82 USD         -3         Filled                    
+2016-07-13 14:00:00  KSS        Buy Market      Fill: $39.76 USD          1          Filled     Liquidated     
+2016-07-13 14:00:00  MPLX       Buy Market      Fill: $34.84 USD          1          Filled     Liquidated     
+2016-07-14 14:00:00  ILMN       Buy Market      Fill: $141.74 USD         3          Filled     Liquidated     
+2016-07-14 14:00:00  KSS        Sell Market     Fill: $38.52 USD          -1         Filled                    
+2016-07-14 14:00:00  MPLX       Sell Market     Fill: $33.35 USD          -1         Filled                    
+2016-07-18 14:00:00  KSS        Buy Market      Fill: $38.60 USD          14         Filled     Liquidated     
+2016-07-18 14:00:00  ILMN       Sell Market     Fill: $144.51 USD         -3         Filled                    
+2016-07-20 14:00:00  ILMN       Buy Market      Fill: $144.43 USD         3          Filled     Liquidated     
+2016-07-20 14:00:00  KSS        Sell Market     Fill: $38.98 USD          -14        Filled                    
+2016-07-21 14:00:00  KSS        Buy Market      Fill: $39.58 USD          14         Filled     Liquidated     
+2016-07-29 14:00:00  ROCK       Buy Market      Fill: $34.27 USD          1          Filled                    
+2016-08-01 14:00:00  ROCK       Sell Market     Fill: $35.28 USD          -1         Filled     Liquidated     
+2016-08-02 14:00:00  KSS        Sell Market     Fill: $41.14 USD          -13        Filled                    
+2016-08-02 14:00:00  MPLX       Sell Market     Fill: $31.34 USD          -1         Filled                    
+2016-08-03 14:00:00  MPLX       Buy Market      Fill: $31.37 USD          17         Filled     Liquidated     
+2016-08-03 14:00:00  KSS        Sell Market     Fill: $37.88 USD          -1         Filled                    
+2016-08-05 14:00:00  ROCK       Sell Market     Fill: $37.64 USD          -1         Filled     Liquidated     
+2016-08-11 14:00:00  KSS        Buy Market      Fill: $37.98 USD          14         Filled     Liquidated     
+2016-08-11 14:00:00  MPLX       Sell Market     Fill: $32.23 USD          -17        Filled                    
+2016-08-12 14:00:00  ALB        Sell Market     Fill: $82.57 USD          -6         Filled     Liquidated     
+2016-08-18 14:00:00  ROCK       Buy Market      Fill: $37.16 USD          1          Filled                    
+2016-08-19 14:00:00  MPLX       Buy Market      Fill: $33.56 USD          1          Filled     Liquidated     
+2016-08-22 14:00:00  ALB        Buy Market      Fill: $82.76 USD          6          Filled                    
+2016-08-23 14:00:00  ROCK       Sell Market     Fill: $37.97 USD          -1         Filled     Liquidated     
+2016-09-12 14:00:00  ROCK       Buy Market      Fill: $35.85 USD          1          Filled                    
+2016-09-12 14:00:00  ALB        Buy Market      Fill: $76.82 USD          1          Filled                    
+2016-09-14 14:00:00  MPLX       Buy Market      Fill: $32.13 USD          16         Filled     Liquidated     
+2016-09-14 14:00:00  PENN       Sell Market     Fill: $13.56 USD          -40        Filled                    
+2016-09-15 14:00:00  PENN       Sell Market     Fill: $13.14 USD          -2         Filled                    
+2016-09-16 14:00:00  ALB        Sell Market     Fill: $77.25 USD          -7         Filled     Liquidated     
+2016-09-16 14:00:00  PENN       Buy Market      Fill: $13.39 USD          42         Filled     Liquidated     
+2016-09-16 14:00:00  MPLX       Sell Market     Fill: $31.93 USD          -17        Filled                    
+2016-09-19 14:00:00  MPLX       Buy Market      Fill: $32.29 USD          17         Filled     Liquidated     
+2016-09-19 14:00:00  PENN       Sell Market     Fill: $13.35 USD          -41        Filled                    
+2016-09-20 14:00:00  PENN       Sell Market     Fill: $13.01 USD          -1         Filled                    
+2016-09-21 14:00:00  PENN       Sell Market     Fill: $12.72 USD          -1         Filled                    
+2016-09-22 14:00:00  PENN       Buy Market      Fill: $12.86 USD          43         Filled     Liquidated     
+2016-09-22 14:00:00  ALB        Buy Market      Fill: $80.21 USD          6          Filled                    
+2016-09-22 14:00:00  ANF        Sell Market     Fill: $16.75 USD          -33        Filled                    
+2016-09-23 14:00:00  ROCK       Sell Market     Fill: $38.25 USD          -1         Filled     Liquidated     
+2016-09-27 14:00:00  ROCK       Buy Market      Fill: $37.38 USD          1          Filled                    
+2016-09-27 14:00:00  ANF        Sell Market     Fill: $16.15 USD          -1         Filled                    
+2016-09-29 14:00:00  ANF        Sell Market     Fill: $15.90 USD          -1         Filled                    
+2016-09-30 14:00:00  ANF        Buy Market      Fill: $15.54 USD          35         Filled     Liquidated     
+2016-09-30 14:00:00  PENN       Sell Market     Fill: $13.63 USD          -41        Filled                    
+2016-10-04 14:00:00  ALB        Sell Market     Fill: $84.82 USD          -6         Filled     Liquidated     
+2016-10-04 14:00:00  PENN       Sell Market     Fill: $13.12 USD          -2         Filled                    
+2016-10-05 14:00:00  PENN       Buy Market      Fill: $13.82 USD          3          Filled     Liquidated     
+2016-10-06 14:00:00  MPLX       Sell Market     Fill: $32.26 USD          -17        Filled                    
+2016-10-06 14:00:00  PENN       Sell Market     Fill: $13.74 USD          -1         Filled                    
+2016-10-07 14:00:00  ROCK       Sell Market     Fill: $38.18 USD          -1         Filled     Liquidated     
+2016-10-07 14:00:00  PENN       Buy Market      Fill: $13.99 USD          1          Filled     Liquidated     
+2016-10-10 14:00:00  ROCK       Buy Market      Fill: $37.49 USD          1          Filled                    
+2016-10-10 14:00:00  PENN       Buy Market      Fill: $14.35 USD          1          Filled     Liquidated     
+2016-10-11 14:00:00  ROCK       Sell Market     Fill: $38.47 USD          -1         Filled     Liquidated     
+2016-10-12 14:00:00  PENN       Buy Market      Fill: $14.45 USD          39         Filled     Liquidated     
+2016-10-12 14:00:00  ROCK       Buy Market      Fill: $37.33 USD          1          Filled                    
+2016-10-12 14:00:00  MPLX       Sell Market     Fill: $31.14 USD          -1         Filled                    
+2016-10-13 14:00:00  ROCK       Sell Market     Fill: $38.35 USD          -1         Filled     Liquidated     
+2016-10-13 14:00:00  PENN       Sell Market     Fill: $14.23 USD          -39        Filled                    
+2016-10-14 14:00:00  MPLX       Buy Market      Fill: $30.29 USD          18         Filled     Liquidated     
+2016-10-14 14:00:00  ROCK       Buy Market      Fill: $37.45 USD          1          Filled                    
+2016-10-14 14:00:00  ANF        Sell Market     Fill: $15.95 USD          -35        Filled                    
+2016-10-14 14:00:00  PENN       Sell Market     Fill: $13.79 USD          -2         Filled                    
+2016-10-17 14:00:00  PENN       Sell Market     Fill: $13.54 USD          -1         Filled                    
+2016-10-17 14:00:00  ANF        Sell Market     Fill: $15.74 USD          -1         Filled                    
+2016-10-19 14:00:00  PENN       Sell Market     Fill: $13.26 USD          -1         Filled                    
+2016-10-19 14:00:00  ANF        Sell Market     Fill: $15.38 USD          -1         Filled                    
+2016-10-20 14:00:00  DPZ        Buy Market      Fill: $165.02 USD         3          Filled                    
+2016-10-21 14:00:00  ROCK       Buy Market      Fill: $35.40 USD          1          Filled                    
+2016-10-21 14:00:00  ANF        Buy Market      Fill: $15.74 USD          1          Filled     Liquidated     
+2016-10-24 14:00:00  DPZ        Sell Market     Fill: $166.35 USD         -3         Filled     Liquidated     
+2016-10-24 14:00:00  PENN       Buy Market      Fill: $13.35 USD          1          Filled     Liquidated     
+2016-10-25 14:00:00  ALB        Buy Market      Fill: $83.34 USD          6          Filled                    
+2016-10-26 14:00:00  ALB        Sell Market     Fill: $82.10 USD          -6         Filled     Liquidated     
+2016-10-26 14:00:00  ROCK       Sell Market     Fill: $35.33 USD          -16        Filled     Liquidated     
+2016-10-26 14:00:00  ANF        Sell Market     Fill: $15.30 USD          -1         Filled                    
+2016-10-27 14:00:00  PENN       Sell Market     Fill: $13.20 USD          -1         Filled                    
+2016-10-28 14:00:00  DPZ        Buy Market      Fill: $165.94 USD         3          Filled                    
+2016-10-31 14:00:00  ANF        Sell Market     Fill: $14.86 USD          -1         Filled                    
+2016-11-01 14:00:00  PENN       Sell Market     Fill: $12.93 USD          -1         Filled                    
+2016-11-01 14:00:00  ANF        Sell Market     Fill: $14.61 USD          -1         Filled                    
+2016-11-03 14:00:00  ALB        Buy Market      Fill: $82.26 USD          6          Filled                    
+2016-11-03 14:00:00  PENN       Sell Market     Fill: $12.23 USD          -3         Filled                    
+2016-11-04 14:00:00  PENN       Sell Market     Fill: $11.98 USD          -1         Filled                    
+2016-11-08 15:00:00  PENN       Buy Market      Fill: $12.23 USD          1          Filled     Liquidated     
+2016-11-09 15:00:00  DPZ        Sell Market     Fill: $168.85 USD         -3         Filled     Liquidated     
+2016-11-09 15:00:00  ROCK       Buy Market      Fill: $40.60 USD          14         Filled                    
+2016-11-10 15:00:00  ALB        Buy Market      Fill: $80.42 USD          1          Filled                    
+2016-11-10 15:00:00  ROCK       Sell Market     Fill: $42.95 USD          -1         Filled     Liquidated     
+2016-11-10 15:00:00  DPZ        Buy Market      Fill: $170.37 USD         3          Filled                    
+2016-11-10 15:00:00  PENN       Buy Market      Fill: $12.69 USD          2          Filled     Liquidated     
+2016-11-10 15:00:00  ANF        Buy Market      Fill: $15.05 USD          1          Filled     Liquidated     
+2016-11-11 15:00:00  DPZ        Sell Market     Fill: $161.10 USD         -3         Filled     Liquidated     
+2016-11-11 15:00:00  ANF        Buy Market      Fill: $15.69 USD          38         Filled     Liquidated     
+2016-11-11 15:00:00  PENN       Buy Market      Fill: $12.99 USD          2          Filled     Liquidated     
+2016-11-14 15:00:00  PENN       Buy Market      Fill: $13.39 USD          43         Filled     Liquidated     
+2016-11-14 15:00:00  MPLX       Sell Market     Fill: $32.23 USD          -17        Filled                    
+2016-11-16 15:00:00  MPLX       Buy Market      Fill: $32.48 USD          17         Filled     Liquidated     
+2016-11-16 15:00:00  ILMN       Sell Market     Fill: $132.90 USD         -4         Filled                    
+2016-11-17 15:00:00  ROCK       Sell Market     Fill: $44.50 USD          -1         Filled     Liquidated     
+2016-11-17 15:00:00  DPZ        Buy Market      Fill: $161.61 USD         3          Filled                    
+2016-11-18 15:00:00  ILMN       Buy Market      Fill: $130.38 USD         4          Filled     Liquidated     
+2016-11-18 15:00:00  ALB        Sell Market     Fill: $82.94 USD          -1         Filled     Liquidated     
+2016-11-18 15:00:00  ANF        Sell Market     Fill: $16.94 USD          -33        Filled                    
+2016-11-21 15:00:00  DPZ        Sell Market     Fill: $164.31 USD         -3         Filled     Liquidated     
+2016-11-21 15:00:00  ALB        Buy Market      Fill: $82.49 USD          1          Filled                    
+2016-11-21 15:00:00  ANF        Sell Market     Fill: $14.60 USD          -6         Filled                    
+2016-11-22 15:00:00  ALB        Sell Market     Fill: $83.86 USD          -1         Filled     Liquidated     
+2016-11-22 15:00:00  DPZ        Buy Market      Fill: $166.50 USD         3          Filled                    
+2016-11-23 15:00:00  ANF        Buy Market      Fill: $15.49 USD          2          Filled     Liquidated     
+2016-11-28 15:00:00  ANF        Sell Market     Fill: $15.24 USD          -1         Filled                    
+2016-11-29 15:00:00  ANF        Sell Market     Fill: $14.78 USD          -1         Filled                    
+2016-11-30 15:00:00  DPZ        Sell Market     Fill: $170.89 USD         -3         Filled     Liquidated     
+2016-11-30 15:00:00  ANF        Buy Market      Fill: $15.08 USD          1          Filled     Liquidated     
+2016-12-01 15:00:00  ANF        Sell Market     Fill: $14.36 USD          -2         Filled                    
+2016-12-02 15:00:00  ROCK       Buy Market      Fill: $44.70 USD          1          Filled                    
+2016-12-05 15:00:00  ANF        Sell Market     Fill: $14.20 USD          -1         Filled                    
+2016-12-06 15:00:00  ROCK       Sell Market     Fill: $45.95 USD          -1         Filled     Liquidated     
+2016-12-06 15:00:00  ILMN       Sell Market     Fill: $124.31 USD         -4         Filled                    
+2016-12-06 15:00:00  ANF        Buy Market      Fill: $14.90 USD          2          Filled     Liquidated     
+2016-12-07 15:00:00  ANF        Buy Market      Fill: $15.28 USD          1          Filled     Liquidated     
+2016-12-08 15:00:00  ANF        Buy Market      Fill: $15.76 USD          2          Filled     Liquidated     
+2016-12-12 15:00:00  ROCK       Buy Market      Fill: $44.02 USD          1          Filled                    
+2016-12-13 15:00:00  ANF        Sell Market     Fill: $14.73 USD          -3         Filled                    
+2016-12-14 15:00:00  NDSN       Buy Market      Fill: $104.51 USD         5          Filled                    
+2016-12-14 15:00:00  ANF        Sell Market     Fill: $14.44 USD          -1         Filled                    
+2016-12-15 15:00:00  ALB        Sell Market     Fill: $89.94 USD          -6         Filled     Liquidated     
+2016-12-15 15:00:00  ANF        Sell Market     Fill: $13.86 USD          -2         Filled                    
+2016-12-16 15:00:00  ANF        Sell Market     Fill: $13.36 USD          -2         Filled                    
+2016-12-20 15:00:00  ANF        Sell Market     Fill: $13.06 USD          -1         Filled                    
+2016-12-22 15:00:00  ANF        Sell Market     Fill: $12.84 USD          -1         Filled                    
+2016-12-23 15:00:00  ANF        Sell Market     Fill: $12.03 USD          -3         Filled                    
+2016-12-27 15:00:00  ANF        Sell Market     Fill: $11.94 USD          -1         Filled                    
+2016-12-30 15:00:00  ROCK       Buy Market      Fill: $42.55 USD          1          Filled                    
+2017-01-04 15:00:00  ROCK       Sell Market     Fill: $43.20 USD          -1         Filled     Liquidated     
+2017-01-04 15:00:00  ANF        Buy Market      Fill: $12.11 USD          1          Filled     Liquidated     
+2017-01-05 15:00:00  ILMN       Buy Market      Fill: $131.36 USD         4          Filled     Liquidated     
+2017-01-05 15:00:00  ANF        Buy Market      Fill: $12.82 USD          3          Filled     Liquidated     
+2017-01-06 15:00:00  ALB        Buy Market      Fill: $90.39 USD          6          Filled                    
+2017-01-06 15:00:00  ANF        Sell Market     Fill: $12.17 USD          -2         Filled                    
+2017-01-09 15:00:00  ROCK       Buy Market      Fill: $41.35 USD          1          Filled                    
+2017-01-09 15:00:00  ANF        Sell Market     Fill: $11.82 USD          -2         Filled                    
+2017-01-11 15:00:00  ROCK       Sell Market     Fill: $43.45 USD          -1         Filled     Liquidated     
+2017-01-18 15:00:00  ROCK       Buy Market      Fill: $41.85 USD          1          Filled                    
+2017-01-18 15:00:00  ANF        Buy Market      Fill: $12.04 USD          1          Filled     Liquidated     
+2017-01-20 15:00:00  ANF        Sell Market     Fill: $11.74 USD          -1         Filled                    
+2017-01-24 15:00:00  ANF        Sell Market     Fill: $11.66 USD          -1         Filled                    
+2017-01-25 15:00:00  ROCK       Sell Market     Fill: $43.90 USD          -1         Filled     Liquidated     
+2017-01-26 15:00:00  ANF        Buy Market      Fill: $12.02 USD          2          Filled     Liquidated     
+2017-01-27 15:00:00  ANF        Sell Market     Fill: $11.71 USD          -2         Filled                    
+2017-01-30 15:00:00  ANF        Sell Market     Fill: $11.37 USD          -2         Filled                    
+2017-02-01 15:00:00  MPLX       Buy Market      Fill: $37.85 USD          15         Filled                    
+2017-02-01 15:00:00  ANF        Buy Market      Fill: $11.62 USD          2          Filled     Liquidated     
+2017-02-02 15:00:00  ANF        Sell Market     Fill: $11.37 USD          -1         Filled                    
+2017-02-06 15:00:00  ROCK       Buy Market      Fill: $41.25 USD          1          Filled                    
+2017-02-06 15:00:00  ANF        Buy Market      Fill: $11.69 USD          1          Filled     Liquidated     
+2017-02-07 15:00:00  ALB        Sell Market     Fill: $94.29 USD          -6         Filled     Liquidated     
+2017-02-08 15:00:00  ALB        Buy Market      Fill: $92.81 USD          6          Filled                    
+2017-02-08 15:00:00  ANF        Sell Market     Fill: $11.27 USD          -2         Filled                    
+2017-02-09 15:00:00  LUMN       Sell Market     Fill: $24.40 USD          -24        Filled                    
+2017-02-09 15:00:00  ANF        Buy Market      Fill: $11.82 USD          3          Filled     Liquidated     
+2017-02-10 15:00:00  ALB        Sell Market     Fill: $93.91 USD          -6         Filled     Liquidated     
+2017-02-10 15:00:00  ANF        Buy Market      Fill: $12.23 USD          2          Filled     Liquidated     
+2017-02-13 15:00:00  ROCK       Sell Market     Fill: $43.45 USD          -1         Filled     Liquidated     
+2017-02-13 15:00:00  ALB        Buy Market      Fill: $93.71 USD          6          Filled                    
+2017-02-14 15:00:00  ARKQ       Buy Market      Fill: $24.59 USD          24         Filled                    
+2017-02-15 15:00:00  ARKQ       Sell Market     Fill: $24.58 USD          -24        Filled     Liquidated     
+2017-02-15 15:00:00  MPLX       Sell Market     Fill: $38.80 USD          -15        Filled     Liquidated     
+2017-02-17 15:00:00  ANF        Sell Market     Fill: $12.08 USD          -1         Filled                    
+2017-02-21 15:00:00  ROCK       Sell Market     Fill: $40.25 USD          -13        Filled     Liquidated     
+2017-02-22 15:00:00  ROCK       Buy Market      Fill: $41.30 USD          14         Filled                    
+2017-02-22 15:00:00  ANF        Buy Market      Fill: $12.40 USD          1          Filled     Liquidated     
+2017-02-23 15:00:00  ANF        Sell Market     Fill: $12.05 USD          -1         Filled                    
+2017-02-24 15:00:00  ANF        Sell Market     Fill: $11.57 USD          -2         Filled                    
+2017-02-27 15:00:00  ANF        Buy Market      Fill: $11.97 USD          1          Filled     Liquidated     
+2017-02-28 15:00:00  LUMN       Buy Market      Fill: $24.61 USD          24         Filled     Liquidated     
+2017-02-28 15:00:00  NDSN       Sell Market     Fill: $121.69 USD         -1         Filled     Liquidated     
+2017-02-28 15:00:00  TGT        Sell Market     Fill: $66.93 USD          -8         Filled                    
+2017-02-28 15:00:00  ANF        Buy Market      Fill: $12.28 USD          2          Filled     Liquidated     
+2017-03-01 15:00:00  NDSN       Buy Market      Fill: $120.02 USD         1          Filled                    
+2017-03-01 15:00:00  TGT        Sell Market     Fill: $58.78 USD          -2         Filled                    
+2017-03-01 15:00:00  ANF        Sell Market     Fill: $11.96 USD          -3         Filled                    
+2017-03-02 15:00:00  NDSN       Sell Market     Fill: $124.71 USD         -1         Filled     Liquidated     
+2017-03-02 15:00:00  ANF        Sell Market     Fill: $11.70 USD          -1         Filled                    
+2017-03-03 15:00:00  ROCK       Sell Market     Fill: $40.75 USD          -14        Filled     Liquidated     
+2017-03-03 15:00:00  ALB        Sell Market     Fill: $103.07 USD         -1         Filled     Liquidated     
+2017-03-03 15:00:00  LUMN       Sell Market     Fill: $23.54 USD          -25        Filled                    
+2017-03-03 15:00:00  ANF        Buy Market      Fill: $13.32 USD          7          Filled     Liquidated     
+2017-03-06 15:00:00  LUMN       Sell Market     Fill: $23.48 USD          -1         Filled                    
+2017-03-06 15:00:00  ANF        Sell Market     Fill: $12.25 USD          -5         Filled                    
+2017-03-07 15:00:00  ALB        Buy Market      Fill: $102.10 USD         1          Filled                    
+2017-03-07 15:00:00  ANF        Sell Market     Fill: $12.01 USD          -1         Filled                    
+2017-03-08 15:00:00  LUMN       Sell Market     Fill: $22.50 USD          -1         Filled                    
+2017-03-08 15:00:00  TGT        Sell Market     Fill: $55.15 USD          -1         Filled                    
+2017-03-08 15:00:00  ANF        Sell Market     Fill: $11.73 USD          -1         Filled                    
+2017-03-10 15:00:00  ROCK       Buy Market      Fill: $38.75 USD          15         Filled                    
+2017-03-13 14:00:00  LUMN       Buy Market      Fill: $23.14 USD          1          Filled     Liquidated     
+2017-03-13 14:00:00  ANF        Buy Market      Fill: $11.99 USD          1          Filled     Liquidated     
+2017-03-14 14:00:00  ALB        Sell Market     Fill: $104.50 USD         -1         Filled     Liquidated     
+2017-03-14 14:00:00  ANF        Sell Market     Fill: $11.68 USD          -2         Filled                    
+2017-03-16 14:00:00  ROCK       Sell Market     Fill: $41.50 USD          -15        Filled     Liquidated     
+2017-03-16 14:00:00  ALGN       Buy Market      Fill: $110.31 USD         5          Filled                    
+2017-03-17 14:00:00  ANF        Buy Market      Fill: $12.05 USD          2          Filled     Liquidated     
+2017-03-21 14:00:00  ANF        Sell Market     Fill: $11.67 USD          -2         Filled                    
+2017-03-22 14:00:00  NDSN       Buy Market      Fill: $122.06 USD         1          Filled                    
+2017-03-22 14:00:00  ANF        Sell Market     Fill: $11.43 USD          -1         Filled                    
+2017-03-23 14:00:00  LUMN       Sell Market     Fill: $22.81 USD          -1         Filled                    
+2017-03-23 14:00:00  ANF        Sell Market     Fill: $11.05 USD          -2         Filled                    
+2017-03-27 14:00:00  ALB        Buy Market      Fill: $104.49 USD         1          Filled                    
+2017-03-28 14:00:00  ANF        Buy Market      Fill: $11.56 USD          2          Filled     Liquidated     
+2017-03-29 14:00:00  ANF        Buy Market      Fill: $11.86 USD          2          Filled     Liquidated     
+2017-03-30 14:00:00  ALB        Sell Market     Fill: $105.06 USD         -1         Filled     Liquidated     
+2017-03-30 14:00:00  ANF        Buy Market      Fill: $12.28 USD          2          Filled     Liquidated     
+2017-03-31 14:00:00  LUMN       Buy Market      Fill: $23.40 USD          1          Filled     Liquidated     
+2017-04-03 14:00:00  ANF        Sell Market     Fill: $11.93 USD          -2         Filled                    
+2017-04-04 14:00:00  ANF        Sell Market     Fill: $11.36 USD          -3         Filled                    
+2017-04-05 14:00:00  ANF        Sell Market     Fill: $10.92 USD          -2         Filled                    
+2017-04-06 14:00:00  ANF        Sell Market     Fill: $10.63 USD          -2         Filled                    
+2017-04-07 14:00:00  LUMN       Buy Market      Fill: $24.46 USD          1          Filled     Liquidated     
+2017-04-11 14:00:00  ANF        Buy Market      Fill: $10.93 USD          2          Filled     Liquidated     
+2017-04-12 14:00:00  ANF        Buy Market      Fill: $11.24 USD          2          Filled     Liquidated     
+2017-04-13 14:00:00  LUMN       Buy Market      Fill: $25.13 USD          1          Filled     Liquidated     
+2017-04-17 14:00:00  ALB        Buy Market      Fill: $103.61 USD         1          Filled                    
+2017-04-17 14:00:00  ANF        Sell Market     Fill: $10.82 USD          -2         Filled                    
+2017-04-19 14:00:00  ALB        Sell Market     Fill: $105.77 USD         -1         Filled     Liquidated     
+2017-04-20 14:00:00  LUMN       Buy Market      Fill: $25.28 USD          24         Filled     Liquidated     
+2017-04-20 14:00:00  ANF        Buy Market      Fill: $11.11 USD          1          Filled     Liquidated     
+2017-04-21 14:00:00  ANF        Buy Market      Fill: $11.70 USD          3          Filled     Liquidated     
+2017-04-25 14:00:00  ANF        Buy Market      Fill: $11.93 USD          1          Filled     Liquidated     
+2017-04-27 14:00:00  ANF        Buy Market      Fill: $12.10 USD          1          Filled     Liquidated     
+2017-04-28 14:00:00  NDSN       Sell Market     Fill: $125.62 USD         -1         Filled     Liquidated     
+2017-05-01 14:00:00  ALGN       Sell Market     Fill: $134.50 USD         -1         Filled     Liquidated     
+2017-05-01 14:00:00  NDSN       Buy Market      Fill: $125.22 USD         1          Filled                    
+2017-05-01 14:00:00  LUMN       Sell Market     Fill: $25.67 USD          -24        Filled                    
+2017-05-01 14:00:00  ANF        Sell Market     Fill: $11.99 USD          -1         Filled                    
+2017-05-02 14:00:00  LUMN       Buy Market      Fill: $25.37 USD          24         Filled     Liquidated     
+2017-05-03 14:00:00  LUMN       Sell Market     Fill: $25.94 USD          -24        Filled                    
+2017-05-03 14:00:00  ANF        Buy Market      Fill: $12.45 USD          2          Filled     Liquidated     
+2017-05-04 14:00:00  LUMN       Buy Market      Fill: $25.43 USD          24         Filled     Liquidated     
+2017-05-04 14:00:00  NDSN       Sell Market     Fill: $126.68 USD         -1         Filled     Liquidated     
+2017-05-05 14:00:00  ALB        Sell Market     Fill: $108.69 USD         -5         Filled     Liquidated     
+2017-05-05 14:00:00  DPZ        Buy Market      Fill: $190.38 USD         3          Filled                    
+2017-05-05 14:00:00  LUMN       Sell Market     Fill: $23.74 USD          -26        Filled                    
+2017-05-05 14:00:00  ANF        Sell Market     Fill: $12.03 USD          -2         Filled                    
+2017-05-08 14:00:00  LUMN       Buy Market      Fill: $23.60 USD          26         Filled     Liquidated     
+2017-05-08 14:00:00  DPZ        Sell Market     Fill: $193.12 USD         -3         Filled     Liquidated     
+2017-05-08 14:00:00  ALB        Buy Market      Fill: $110.01 USD         5          Filled                    
+2017-05-08 14:00:00  ANF        Buy Market      Fill: $12.53 USD          2          Filled     Liquidated     
+2017-05-10 14:00:00  ALB        Sell Market     Fill: $109.32 USD         -5         Filled     Liquidated     
+2017-05-10 14:00:00  DPZ        Buy Market      Fill: $195.36 USD         3          Filled                    
+2017-05-10 14:00:00  TGT        Buy Market      Fill: $58.08 USD          1          Filled     Liquidated     
+2017-05-11 14:00:00  DPZ        Sell Market     Fill: $195.67 USD         -3         Filled     Liquidated     
+2017-05-11 14:00:00  KBH        Buy Market      Fill: $20.94 USD          29         Filled                    
+2017-05-11 14:00:00  ANF        Buy Market      Fill: $14.19 USD          7          Filled     Liquidated     
+2017-05-12 14:00:00  TGT        Sell Market     Fill: $56.06 USD          -1         Filled                    
+2017-05-12 14:00:00  ANF        Sell Market     Fill: $14.11 USD          -1         Filled                    
+2017-05-15 14:00:00  ANF        Sell Market     Fill: $13.83 USD          -1         Filled                    
+2017-05-17 14:00:00  ANF        Sell Market     Fill: $13.54 USD          -1         Filled                    
+2017-05-18 14:00:00  TGT        Buy Market      Fill: $55.04 USD          11         Filled     Liquidated     
+2017-05-18 14:00:00  KBH        Buy Market      Fill: $20.82 USD          1          Filled                    
+2017-05-18 14:00:00  ANF        Sell Market     Fill: $12.90 USD          -2         Filled                    
+2017-05-19 14:00:00  TGT        Sell Market     Fill: $55.82 USD          -11        Filled                    
+2017-05-19 14:00:00  ANF        Sell Market     Fill: $12.55 USD          -2         Filled                    
+2017-05-22 14:00:00  KBH        Sell Market     Fill: $21.43 USD          -1         Filled     Liquidated     
+2017-05-23 14:00:00  NDSN       Sell Market     Fill: $131.02 USD         -4         Filled     Liquidated     
+2017-05-23 14:00:00  KBH        Sell Market     Fill: $21.47 USD          -29        Filled     Liquidated     
+2017-05-23 14:00:00  DPZ        Buy Market      Fill: $198.83 USD         3          Filled                    
+2017-05-24 14:00:00  ARKK       Buy Market      Fill: $27.44 USD          23         Filled                    
+2017-05-24 14:00:00  ANF        Sell Market     Fill: $12.20 USD          -2         Filled                    
+
+... i 5040 więcej zleceń
+
+Uwaga: Zlecenia były realizowane w 2 różnych momentach czasowych.
+Przykładowe czasy: 14:00:00, 15:00:00...
+
+====================================================================================================
+
+====================================================================================================
+                                   WYJAŚNIENIE ZLECEŃ
+====================================================================================================
+
+1. CZASY WYKONANIA ZLECEŃ:
+   - Zlecenia są realizowane głównie o 14:00:00 i 15:00:00 (czas UTC)
+   - 10:00:00 to czas decyzji o rebalansowaniu (30 minut po otwarciu rynku)
+   - Faktyczne wykonanie zleceń następuje później (14:00 lub 15:00)
+   - To jest normalne zachowanie - Lean wykonuje zlecenia w następnym dostępnym barze danych
+   - W przypadku danych dziennych, zlecenia są wykonywane na następnym barze
+
+2. CO OZNACZA 'LIQUIDATED'?
+   'Liquidated' oznacza LIKWIDACJĘ (zamknięcie) istniejącej pozycji.
+
+   Przykłady:
+   - Jeśli mamy długą pozycję (kupiliśmy akcje) i sprzedajemy je → 'Liquidated'
+   - Jeśli mamy krótką pozycję (sprzedaliśmy akcje) i kupujemy je z powrotem → 'Liquidated'
+   - Jeśli otwieramy nową pozycję (kupujemy lub sprzedajemy po raz pierwszy) → BRAK 'Liquidated'
+
+   W strategii momentum:
+   - Co miesiąc rebalansujemy portfel
+   - Najpierw zamykamy pozycje, które nie są już w nowym portfelu → 'Liquidated'
+   - Potem otwieramy nowe pozycje zgodnie z nowym rankingiem momentum → BRAK 'Liquidated'
+
+3. PRZYKŁAD SEKWENCJI ZLECEŃ:
+   2015-07-06 14:00:00 | PENN | Buy Market | Qty: 27 | Tag: (puste)
+   → Otwieramy nową długą pozycję w PENN (27 akcji)
+
+   2015-07-08 14:00:00 | PENN | Sell Market | Qty: -1 | Tag: Liquidated
+   → Zamykamy część pozycji w PENN (likwidacja 1 akcji)
+
+   2015-07-09 14:00:00 | PENN | Buy Market | Qty: 1 | Tag: (puste)
+   → Otwieramy ponownie pozycję w PENN (1 akcja)
+
+4. DLACZEGO TYLKO 14:00 I 15:00?
+   - Lean używa danych dziennych (daily bars)
+   - Zlecenia są wykonywane na następnym dostępnym barze danych
+   - W przypadku danych dziennych, to zwykle 14:00 lub 15:00 (czas UTC)
+   - To jest normalne zachowanie dla backtestów z danymi dziennymi
+   - Czas wykonania zależy od dostępności danych w plikach źródłowych
+
+====================================================================================================
+
+                    RAPORT ZAKOŃCZONY - FORMAT QUANTCONNECT (KAPITAŁ: $5,000)
+====================================================================================================
